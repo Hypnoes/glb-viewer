@@ -8,6 +8,8 @@ A standalone, zero-build review tool for glTF assets **and** the NEON RANGE asse
 
 Everything renders locally with a vendored copy of three.js. There is no bundler, framework, CDN, upload or install step. **Wave 1 is read-only:** there are no TransformControls, no scene edits and no write endpoints.
 
+**Live demo:** <https://hypnoes.github.io/glb-viewer/> — the viewer runs from the checked-in samples. The scene and UI inspectors also work there, but only with page-relative query parameters (for example `?scene=samples/neon/scenes/range.scene.json&manifest=samples/neon/manifest.json`), because the `/project-assets/` route exists only while `serve.py` is running locally.
+
 ![Scene inspector](screenshots/scene-range.png)
 
 ## Run it
