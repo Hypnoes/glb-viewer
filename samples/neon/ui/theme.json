@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "name": "neon-range-fixture",
+  "note": "Fixture theme for the coarse DOM preview. Colors are sRGB 0-1, as specified by the Wave 1 UI contract.",
+  "colors": {
+    "bg": [0.016, 0.024, 0.043],
+    "panel": [0.043, 0.071, 0.102, 0.86],
+    "panelSolid": [0.031, 0.055, 0.078, 0.97],
+    "text": [0.847, 0.910, 0.937],
+    "textBright": [0.949, 0.984, 1.0],
+    "muted": [0.470, 0.557, 0.608],
+    "cyan": [0.275, 0.902, 1.0],
+    "orange": [1.0, 0.541, 0.165],
+    "green": [0.553, 1.0, 0.690],
+    "red": [1.0, 0.392, 0.455],
+    "line": [0.275, 0.902, 1.0, 0.2]
+  },
+  "font": {
+    "sans": "Segoe UI, Inter, system-ui, sans-serif",
+    "mono": "Cascadia Mono, JetBrains Mono, Consolas, monospace",
+    "size": {
+      "micro": 10,
+      "small": 12,
+      "body": 15,
+      "hud": 28,
+      "title": 56
+    }
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 20,
+    "xl": 36
+  }
+}

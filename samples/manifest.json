@@ -1,0 +1,90 @@
+{
+  "groups": [
+    { "id": "neon-range", "label": "NEON RANGE" },
+    { "id": "khronos", "label": "KHRONOS" }
+  ],
+  "samples": [
+    {
+      "id": "range-arena",
+      "group": "NEON RANGE",
+      "name": "Range Arena",
+      "url": "samples/neon/range_arena.glb",
+      "format": "GLB",
+      "type": "ENVIRONMENT",
+      "purpose": "Closed neon training range; authored interior camera.",
+      "assetId": "ENV_RANGE",
+      "source": "NEON RANGE · tools/asset-export",
+      "stats": "146 mesh nodes · 34,472 tris"
+    },
+    {
+      "id": "weapon-nr01",
+      "group": "NEON RANGE",
+      "name": "Weapon NR01",
+      "url": "samples/neon/weapon_nr01.glb",
+      "format": "GLB",
+      "type": "VIEWMODEL",
+      "purpose": "21-part view-model rifle with muzzle anchor.",
+      "assetId": "WPN_NR01",
+      "source": "NEON RANGE · tools/asset-export",
+      "stats": "21 mesh nodes · 252 tris"
+    },
+    {
+      "id": "drone-mk2",
+      "group": "NEON RANGE",
+      "name": "Drone Mk2",
+      "url": "samples/neon/drone_mk2.glb",
+      "anims": "samples/neon/drone_mk2.anims.json",
+      "format": "GLB",
+      "type": "PROP",
+      "purpose": "Hovering target drone with ring silhouette.",
+      "assetId": "PRP_DRONE_MK2",
+      "source": "NEON RANGE · tools/asset-export",
+      "stats": "6 mesh nodes · 3,888 tris"
+    },
+    {
+      "id": "cover-crate",
+      "group": "NEON RANGE",
+      "name": "Cover Crate",
+      "url": "samples/neon/cover_crate.glb",
+      "format": "GLB",
+      "type": "PROP",
+      "purpose": "Modular cyan-trim crate; 48 triangles.",
+      "assetId": "PRP_COVER_CRATE",
+      "source": "NEON RANGE · tools/asset-export",
+      "stats": "4 mesh nodes · 48 tris"
+    },
+    {
+      "id": "damaged-helmet",
+      "group": "KHRONOS",
+      "name": "Damaged Helmet",
+      "url": "samples/DamagedHelmet.glb",
+      "format": "GLB",
+      "type": "TEXTURED",
+      "purpose": "Battle-worn PBR helmet with full texture set.",
+      "source": "Khronos glTF Sample Assets",
+      "stats": "PBR · glTF 2.0"
+    },
+    {
+      "id": "fox",
+      "group": "KHRONOS",
+      "name": "Fox",
+      "url": "samples/Fox.gltf",
+      "format": "GLTF",
+      "type": "ANIMATED",
+      "purpose": "Skeletal rig with Survey, Walk and Run clips.",
+      "source": "Khronos glTF Sample Assets",
+      "stats": "3 clips · external .bin + PNG"
+    },
+    {
+      "id": "box-textured",
+      "group": "KHRONOS",
+      "name": "Box Textured",
+      "url": "samples/BoxTextured.gltf",
+      "format": "GLTF",
+      "type": "MULTI-FILE",
+      "purpose": "External .bin + PNG resource resolution test.",
+      "source": "Khronos glTF Sample Assets",
+      "stats": "glTF + BIN + PNG"
+    }
+  ]
+}

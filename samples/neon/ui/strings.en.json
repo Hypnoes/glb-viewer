@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "locale": "en",
+  "strings": {
+    "hud.score": "SCORE",
+    "hud.accuracy": "ACCURACY",
+    "hud.combo": "COMBO",
+    "hud.time": "TIME",
+    "hud.phase": "PHASE 01 / CALIBRATION",
+    "hud.ammo": "AMMO",
+    "hud.reserve": "RESERVE",
+    "hud.lock": "TARGET LOCK",
+    "hud.status": "RANGE LIVE · HIT THE HOSTILES",
+    "hud.hit": "HIT +100",
+    "menu.title": "PAUSED",
+    "menu.subtitle": "NEON RANGE / SYSTEM MENU",
+    "menu.resume": "RESUME RUN",
+    "menu.window": "WINDOW MODE",
+    "menu.restart": "RESTART ROUND",
+    "menu.quit": "QUIT RANGE",
+    "menu.hint": "ESC RESUME · F11 DISPLAY MODE",
+    "results.title": "ROUND COMPLETE",
+    "results.score": "FINAL SCORE",
+    "results.accuracy": "ACCURACY",
+    "results.hits": "HITS",
+    "results.best": "BEST COMBO",
+    "results.restart": "RUN IT BACK",
+    "results.menu": "BACK TO MENU",
+    "common.ready": "READY"
+  }
+}

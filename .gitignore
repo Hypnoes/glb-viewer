@@ -1,0 +1,15 @@
+# Headless Edge profiles created by test/smoke.mjs and test/scene-smoke.mjs
+test/.edge-profile/
+test/.edge-scene-profile/
+
+# Local scratch capture from the no-CDP fallback in the README
+screenshots/fallback.png
+
+# OS / editor / runtime noise
+.DS_Store
+Thumbs.db
+desktop.ini
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/

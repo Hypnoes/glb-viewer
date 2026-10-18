@@ -1,0 +1,1112 @@
+{
+  "schema": 1,
+  "baseUrl": "http://127.0.0.1:8126",
+  "startedAt": "2026-10-18T05:14:52.750Z",
+  "source": {
+    "kind": "project-assets",
+    "scene": "/project-assets/scenes/range.scene.json",
+    "manifest": "/project-assets/manifest.json",
+    "note": "real fps-demo/assets pack via /project-assets/",
+    "forced": "auto",
+    "realPackAvailable": true,
+    "attempts": []
+  },
+  "expected": {
+    "environmentInstances": 1,
+    "propInstances": 4,
+    "targetInstances": 6,
+    "instances": 11,
+    "targetSlots": 6,
+    "colliders": 4,
+    "lights": 10,
+    "camera": {
+      "position": [
+        0,
+        1.68,
+        12
+      ],
+      "target": [
+        0,
+        2.6,
+        -9
+      ],
+      "fov": 78
+    }
+  },
+  "scene": {
+    "url": "http://127.0.0.1:8126/project-assets/scenes/range.scene.json",
+    "manifestUrl": "http://127.0.0.1:8126/project-assets/manifest.json",
+    "state": {
+      "ready": true,
+      "loading": false,
+      "origin": "project-assets",
+      "sceneId": "scene.range",
+      "sceneUrl": "http://127.0.0.1:8126/project-assets/scenes/range.scene.json",
+      "manifestUrl": "http://127.0.0.1:8126/project-assets/manifest.json",
+      "assetBase": "http://127.0.0.1:8126/project-assets/",
+      "pack": "neon-range",
+      "packVersion": "0.1.0",
+      "environmentAsset": "env.range.static",
+      "counts": {
+        "authoredAssets": 5,
+        "assetsUsed": 4,
+        "instances": 11,
+        "environmentInstances": 1,
+        "propInstances": 4,
+        "targetInstances": 6,
+        "targetSlots": 6,
+        "colliders": 4,
+        "lights": 10,
+        "spawnPoints": 1,
+        "meshes": 146,
+        "triangles": 34472,
+        "vertices": 20746,
+        "materials": 15
+      },
+      "bounds": {
+        "empty": false,
+        "min": [
+          -18.2,
+          -0.5,
+          -18.2
+        ],
+        "max": [
+          18.2,
+          8.4,
+          18.2
+        ],
+        "size": [
+          36.4,
+          8.9,
+          36.4
+        ],
+        "center": [
+          0,
+          3.95,
+          0
+        ]
+      },
+      "camera": {
+        "position": [
+          0,
+          1.68,
+          12
+        ],
+        "target": [
+          0,
+          2.6,
+          -9
+        ],
+        "fov": 78,
+        "near": 0.05,
+        "far": 160
+      },
+      "post": {
+        "tonemapping": "tony_mc_mapface",
+        "tonemappingApproximation": "Neutral (Tony McMapface approximation)",
+        "exposure": 1,
+        "bloom": 0.22,
+        "bloomOverride": null,
+        "bloomPreviewStrength": 0.0506,
+        "bloomPass": "UnrealBloomPass (approximation)",
+        "fog": {
+          "color": [
+            0.006,
+            0.011,
+            0.024
+          ],
+          "start": 22,
+          "end": 60
+        },
+        "clearColor": [
+          0.006,
+          0.011,
+          0.024
+        ],
+        "mounted": true
+      },
+      "lights": [
+        {
+          "kind": "ambient",
+          "color": [
+            0.24,
+            0.32,
+            0.48
+          ],
+          "attached": "world",
+          "intensity": 0.24,
+          "authoredIntensity": 240,
+          "distance": null,
+          "position": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "directional",
+          "color": [
+            0.64,
+            0.76,
+            1
+          ],
+          "attached": "world",
+          "intensity": 0.417,
+          "authoredIntensity": 7500,
+          "distance": null,
+          "position": [
+            -12,
+            20,
+            14
+          ]
+        },
+        {
+          "kind": "point",
+          "color": [
+            0.45,
+            0.78,
+            1
+          ],
+          "attached": "world",
+          "intensity": 15.625,
+          "authoredIntensity": 1250000,
+          "distance": 24,
+          "position": [
+            -7,
+            6.6,
+            5.5
+          ]
+        },
+        {
+          "kind": "point",
+          "color": [
+            0.45,
+            0.78,
+            1
+          ],
+          "attached": "world",
+          "intensity": 15.625,
+          "authoredIntensity": 1250000,
+          "distance": 24,
+          "position": [
+            7,
+            6.6,
+            5.5
+          ]
+        },
+        {
+          "kind": "point",
+          "color": [
+            0.45,
+            0.78,
+            1
+          ],
+          "attached": "world",
+          "intensity": 15.625,
+          "authoredIntensity": 1250000,
+          "distance": 24,
+          "position": [
+            -7,
+            6.6,
+            -6
+          ]
+        },
+        {
+          "kind": "point",
+          "color": [
+            0.45,
+            0.78,
+            1
+          ],
+          "attached": "world",
+          "intensity": 15.625,
+          "authoredIntensity": 1250000,
+          "distance": 24,
+          "position": [
+            7,
+            6.6,
+            -6
+          ]
+        },
+        {
+          "kind": "point",
+          "color": [
+            0.15,
+            0.75,
+            1
+          ],
+          "attached": "world",
+          "intensity": 32.5,
+          "authoredIntensity": 2600000,
+          "distance": 28,
+          "position": [
+            -13,
+            4.8,
+            -12
+          ]
+        },
+        {
+          "kind": "point",
+          "color": [
+            1,
+            0.16,
+            0.55
+          ],
+          "attached": "world",
+          "intensity": 23.75,
+          "authoredIntensity": 1900000,
+          "distance": 24,
+          "position": [
+            13.5,
+            4,
+            -2
+          ]
+        },
+        {
+          "kind": "point",
+          "color": [
+            1,
+            0.48,
+            0.12
+          ],
+          "attached": "world",
+          "intensity": 18.75,
+          "authoredIntensity": 1500000,
+          "distance": 22,
+          "position": [
+            0,
+            5,
+            -15
+          ]
+        },
+        {
+          "kind": "point",
+          "color": [
+            0.62,
+            0.78,
+            1
+          ],
+          "attached": "camera",
+          "intensity": 0.065,
+          "authoredIntensity": 26000,
+          "distance": 1.9,
+          "position": [
+            0.34,
+            -0.02,
+            0.12
+          ]
+        }
+      ],
+      "instances": [
+        {
+          "id": "env.range.static",
+          "asset": "env.range.static",
+          "kind": "environment",
+          "url": "http://127.0.0.1:8126/project-assets/models/environment/env_range_static.glb",
+          "transform": {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "rotationY": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "cover.0",
+          "asset": "prp.cover.crate",
+          "kind": "prop",
+          "url": "http://127.0.0.1:8126/project-assets/models/props/prp_cover_crate.glb",
+          "transform": {
+            "translation": [
+              -7.5,
+              0.65,
+              5
+            ],
+            "rotationY": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "cover.1",
+          "asset": "prp.cover.crate.orange",
+          "kind": "prop",
+          "url": "http://127.0.0.1:8126/project-assets/models/props/prp_cover_crate_orange.glb",
+          "transform": {
+            "translation": [
+              7.8,
+              0.8,
+              2
+            ],
+            "rotationY": 0,
+            "scale": [
+              0.8333333,
+              1.2307692,
+              0.8333333
+            ]
+          }
+        },
+        {
+          "id": "cover.2",
+          "asset": "prp.cover.crate",
+          "kind": "prop",
+          "url": "http://127.0.0.1:8126/project-assets/models/props/prp_cover_crate.glb",
+          "transform": {
+            "translation": [
+              -3.6,
+              0.5,
+              -3.5
+            ],
+            "rotationY": 0,
+            "scale": [
+              1.6666667,
+              0.7692308,
+              0.2083333
+            ]
+          }
+        },
+        {
+          "id": "cover.3",
+          "asset": "prp.cover.crate.orange",
+          "kind": "prop",
+          "url": "http://127.0.0.1:8126/project-assets/models/props/prp_cover_crate_orange.glb",
+          "transform": {
+            "translation": [
+              4.2,
+              0.5,
+              -3.5
+            ],
+            "rotationY": 0,
+            "scale": [
+              1.4166667,
+              0.7692308,
+              0.2083333
+            ]
+          }
+        },
+        {
+          "id": "slot.0",
+          "asset": "prp.drone.mk2",
+          "kind": "target",
+          "slotId": "slot.0",
+          "phase": 0,
+          "url": "http://127.0.0.1:8126/project-assets/models/props/prp_drone_mk2.glb",
+          "transform": {
+            "translation": [
+              -5.6,
+              2.45,
+              -8.5
+            ],
+            "rotationY": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "slot.1",
+          "asset": "prp.drone.mk2",
+          "kind": "target",
+          "slotId": "slot.1",
+          "phase": 1.37,
+          "url": "http://127.0.0.1:8126/project-assets/models/props/prp_drone_mk2.glb",
+          "transform": {
+            "translation": [
+              5.2,
+              3.05,
+              -10
+            ],
+            "rotationY": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "slot.2",
+          "asset": "prp.drone.mk2",
+          "kind": "target",
+          "slotId": "slot.2",
+          "phase": 2.74,
+          "url": "http://127.0.0.1:8126/project-assets/models/props/prp_drone_mk2.glb",
+          "transform": {
+            "translation": [
+              0,
+              2.15,
+              -13
+            ],
+            "rotationY": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "slot.3",
+          "asset": "prp.drone.mk2",
+          "kind": "target",
+          "slotId": "slot.3",
+          "phase": 4.11,
+          "url": "http://127.0.0.1:8126/project-assets/models/props/prp_drone_mk2.glb",
+          "transform": {
+            "translation": [
+              -10,
+              3.65,
+              -14
+            ],
+            "rotationY": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "slot.4",
+          "asset": "prp.drone.mk2",
+          "kind": "target",
+          "slotId": "slot.4",
+          "phase": 5.48,
+          "url": "http://127.0.0.1:8126/project-assets/models/props/prp_drone_mk2.glb",
+          "transform": {
+            "translation": [
+              10.5,
+              2.65,
+              -13.5
+            ],
+            "rotationY": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "slot.5",
+          "asset": "prp.drone.mk2",
+          "kind": "target",
+          "slotId": "slot.5",
+          "phase": 6.85,
+          "url": "http://127.0.0.1:8126/project-assets/models/props/prp_drone_mk2.glb",
+          "transform": {
+            "translation": [
+              0,
+              4.55,
+              -6.2
+            ],
+            "rotationY": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        }
+      ],
+      "targetSlots": [
+        {
+          "id": "slot.0",
+          "asset": "prp.drone.mk2",
+          "position": [
+            -5.6,
+            2.45,
+            -8.5
+          ],
+          "phase": 0,
+          "rotationY": 0,
+          "loaded": true
+        },
+        {
+          "id": "slot.1",
+          "asset": "prp.drone.mk2",
+          "position": [
+            5.2,
+            3.05,
+            -10
+          ],
+          "phase": 1.37,
+          "rotationY": 0,
+          "loaded": true
+        },
+        {
+          "id": "slot.2",
+          "asset": "prp.drone.mk2",
+          "position": [
+            0,
+            2.15,
+            -13
+          ],
+          "phase": 2.74,
+          "rotationY": 0,
+          "loaded": true
+        },
+        {
+          "id": "slot.3",
+          "asset": "prp.drone.mk2",
+          "position": [
+            -10,
+            3.65,
+            -14
+          ],
+          "phase": 4.11,
+          "rotationY": 0,
+          "loaded": true
+        },
+        {
+          "id": "slot.4",
+          "asset": "prp.drone.mk2",
+          "position": [
+            10.5,
+            2.65,
+            -13.5
+          ],
+          "phase": 5.48,
+          "rotationY": 0,
+          "loaded": true
+        },
+        {
+          "id": "slot.5",
+          "asset": "prp.drone.mk2",
+          "position": [
+            0,
+            4.55,
+            -6.2
+          ],
+          "phase": 6.85,
+          "rotationY": 0,
+          "loaded": true
+        }
+      ],
+      "colliders": [
+        {
+          "id": "cover.0",
+          "type": "aabb",
+          "center": [
+            -7.5,
+            0.65,
+            5
+          ],
+          "half": [
+            1.25,
+            0.65,
+            1.25
+          ],
+          "source": "data"
+        },
+        {
+          "id": "cover.1",
+          "type": "aabb",
+          "center": [
+            7.8,
+            0.8,
+            2
+          ],
+          "half": [
+            1.05,
+            0.8,
+            1.05
+          ],
+          "source": "data"
+        },
+        {
+          "id": "cover.2",
+          "type": "aabb",
+          "center": [
+            -3.6,
+            0.5,
+            -3.5
+          ],
+          "half": [
+            2.05,
+            0.5,
+            0.35
+          ],
+          "source": "data"
+        },
+        {
+          "id": "cover.3",
+          "type": "aabb",
+          "center": [
+            4.2,
+            0.5,
+            -3.5
+          ],
+          "half": [
+            1.75,
+            0.5,
+            0.35
+          ],
+          "source": "data"
+        }
+      ],
+      "spawn": {
+        "position": [
+          0,
+          0,
+          12
+        ],
+        "rotationY": 0
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "dom": {
+      "sceneSectionVisible": true,
+      "sceneId": "scene.range",
+      "sceneInstances": "11",
+      "sceneTargets": "6",
+      "sceneColliders": "4",
+      "sceneBounds": "36.4 × 8.9 × 36.4 m",
+      "scenePost": "tony_mc_mapface → Neutral (Tony McMapface approximation) · bloom 0.22 · fog 22–60",
+      "hudVisible": true,
+      "hudInstances": "11",
+      "hierarchyRows": 174,
+      "materialRows": 15,
+      "loadingHidden": true,
+      "errorHidden": true,
+      "emptyHidden": true,
+      "stageName": "SCENE.RANGE",
+      "w": 1014,
+      "h": 904
+    },
+    "interactions": {
+      "selected": "env.range.static",
+      "selectionVisible": true,
+      "cleared": true,
+      "boundsOn": true,
+      "boundsOff": true
+    },
+    "screenshot": "screenshots/scene-range.png",
+    "viewportScreenshot": "screenshots/scene-range-viewport.png",
+    "pass": true,
+    "failures": []
+  },
+  "ui": {
+    "source": "project-assets",
+    "layout": "/project-assets/ui/layout.json",
+    "state": {
+      "ready": true,
+      "loading": false,
+      "layoutUrl": "/project-assets/ui/layout.json",
+      "themeUrl": "http://127.0.0.1:8126/project-assets/ui/theme.json",
+      "stringsUrl": "http://127.0.0.1:8126/project-assets/ui/strings.en.json",
+      "screens": [
+        {
+          "id": "hud",
+          "label": "HUD"
+        },
+        {
+          "id": "menu",
+          "label": "MENU"
+        },
+        {
+          "id": "results",
+          "label": "RESULTS"
+        }
+      ],
+      "activeScreen": "hud",
+      "size": "1600x900",
+      "target": {
+        "width": 1600,
+        "height": 900
+      },
+      "displayScale": 0.7913,
+      "totalNodes": 27,
+      "boundNodes": 9,
+      "errors": [],
+      "warnings": [],
+      "approximate": true
+    },
+    "dom": {
+      "previewVisible": true,
+      "uiSectionVisible": true,
+      "nodeCount": 27,
+      "text": "N E O N   R A N G E\nLIVE FIRE  //  SECTOR 07\nSCORE\n12,450\nCOMBO x4\nACCURACY 86%   BEST x9\nTIME REMAINING\n01:12\nHITS 37  /  SHOTS 43\nAMMUNITION\n12\n/ 48\nRELOADING 86%\nWASD MOVE    SHIFT SPRINT    SPACE JUMP\nLMB FIRE    R RELOAD    ESC MENU\nCLICK TO START THE RANGE\nX\nLOCK\n+100",
+      "layoutPath": "/project-assets/ui/layout.json",
+      "errorHidden": true,
+      "pageOverflow": false,
+      "frame": {
+        "stage": {
+          "x": 286,
+          "y": 122,
+          "w": 1314,
+          "h": 819
+        },
+        "frame": {
+          "x": 310,
+          "y": 175.5,
+          "w": 1266,
+          "h": 712
+        }
+      }
+    },
+    "sizes": [
+      {
+        "key": "1600x900",
+        "state": {
+          "ready": true,
+          "loading": false,
+          "layoutUrl": "/project-assets/ui/layout.json",
+          "themeUrl": "http://127.0.0.1:8126/project-assets/ui/theme.json",
+          "stringsUrl": "http://127.0.0.1:8126/project-assets/ui/strings.en.json",
+          "screens": [
+            {
+              "id": "hud",
+              "label": "HUD"
+            },
+            {
+              "id": "menu",
+              "label": "MENU"
+            },
+            {
+              "id": "results",
+              "label": "RESULTS"
+            }
+          ],
+          "activeScreen": "hud",
+          "size": "1600x900",
+          "target": {
+            "width": 1600,
+            "height": 900
+          },
+          "displayScale": 0.7913,
+          "totalNodes": 27,
+          "boundNodes": 9,
+          "errors": [],
+          "warnings": [],
+          "approximate": true
+        },
+        "fit": {
+          "target": {
+            "width": 1600,
+            "height": 900
+          },
+          "stage": {
+            "w": 1314,
+            "h": 819
+          },
+          "frame": {
+            "x": 310,
+            "y": 175.5,
+            "w": 1266,
+            "h": 712
+          },
+          "rootTransform": "matrix(0.79125, 0, 0, 0.79125, 0, 0)",
+          "overflow": false
+        },
+        "failures": [],
+        "screenshot": "screenshots/ui-preview-1600.png"
+      },
+      {
+        "key": "2400x1350",
+        "state": {
+          "ready": true,
+          "loading": false,
+          "layoutUrl": "/project-assets/ui/layout.json",
+          "themeUrl": "http://127.0.0.1:8126/project-assets/ui/theme.json",
+          "stringsUrl": "http://127.0.0.1:8126/project-assets/ui/strings.en.json",
+          "screens": [
+            {
+              "id": "hud",
+              "label": "HUD"
+            },
+            {
+              "id": "menu",
+              "label": "MENU"
+            },
+            {
+              "id": "results",
+              "label": "RESULTS"
+            }
+          ],
+          "activeScreen": "hud",
+          "size": "2400x1350",
+          "target": {
+            "width": 2400,
+            "height": 1350
+          },
+          "displayScale": 0.5275,
+          "totalNodes": 27,
+          "boundNodes": 9,
+          "errors": [],
+          "warnings": [],
+          "approximate": true
+        },
+        "fit": {
+          "target": {
+            "width": 2400,
+            "height": 1350
+          },
+          "stage": {
+            "w": 1314,
+            "h": 819
+          },
+          "frame": {
+            "x": 310,
+            "y": 175.5,
+            "w": 1266,
+            "h": 712
+          },
+          "rootTransform": "matrix(0.5275, 0, 0, 0.5275, 0, 0)",
+          "overflow": false
+        },
+        "failures": [],
+        "screenshot": "screenshots/ui-preview-2400.png"
+      },
+      {
+        "key": "900",
+        "state": {
+          "ready": true,
+          "loading": false,
+          "layoutUrl": "/project-assets/ui/layout.json",
+          "themeUrl": "http://127.0.0.1:8126/project-assets/ui/theme.json",
+          "stringsUrl": "http://127.0.0.1:8126/project-assets/ui/strings.en.json",
+          "screens": [
+            {
+              "id": "hud",
+              "label": "HUD"
+            },
+            {
+              "id": "menu",
+              "label": "MENU"
+            },
+            {
+              "id": "results",
+              "label": "RESULTS"
+            }
+          ],
+          "activeScreen": "hud",
+          "size": "900",
+          "target": {
+            "width": 900,
+            "height": 506
+          },
+          "displayScale": 1,
+          "totalNodes": 27,
+          "boundNodes": 9,
+          "errors": [],
+          "warnings": [],
+          "approximate": true
+        },
+        "fit": {
+          "target": {
+            "width": 900,
+            "height": 506
+          },
+          "stage": {
+            "w": 1314,
+            "h": 819
+          },
+          "frame": {
+            "x": 493,
+            "y": 278.5,
+            "w": 900,
+            "h": 506
+          },
+          "rootTransform": "matrix(1, 0, 0, 1, 0, 0)",
+          "overflow": false
+        },
+        "failures": [],
+        "screenshot": "screenshots/ui-preview-900.png"
+      }
+    ],
+    "screens": [
+      {
+        "id": "hud",
+        "state": {
+          "ready": true,
+          "loading": false,
+          "layoutUrl": "/project-assets/ui/layout.json",
+          "themeUrl": "http://127.0.0.1:8126/project-assets/ui/theme.json",
+          "stringsUrl": "http://127.0.0.1:8126/project-assets/ui/strings.en.json",
+          "screens": [
+            {
+              "id": "hud",
+              "label": "HUD"
+            },
+            {
+              "id": "menu",
+              "label": "MENU"
+            },
+            {
+              "id": "results",
+              "label": "RESULTS"
+            }
+          ],
+          "activeScreen": "hud",
+          "size": "1600x900",
+          "target": {
+            "width": 1600,
+            "height": 900
+          },
+          "displayScale": 0.7913,
+          "totalNodes": 27,
+          "boundNodes": 9,
+          "errors": [],
+          "warnings": [],
+          "approximate": true
+        },
+        "dom": {
+          "active": "hud",
+          "nodes": 27,
+          "text": "N E O N   R A N G E\nLIVE FIRE  //  SECTOR 07\nSCORE\n12,450\nCOMBO x4\nACCURACY 86%   BEST x9\nTIME REMAINING\n01:12\nHITS 37  /  SHOTS 43\nAMMUNITION\n12\n/ 48\nRELOADING 86%\nWASD MOVE    SHIFT SPRINT    SPACE JUMP\nLMB FIRE    R RELOAD    ESC MENU\nCL",
+          "frameFits": true
+        },
+        "failures": []
+      },
+      {
+        "id": "menu",
+        "state": {
+          "ready": true,
+          "loading": false,
+          "layoutUrl": "/project-assets/ui/layout.json",
+          "themeUrl": "http://127.0.0.1:8126/project-assets/ui/theme.json",
+          "stringsUrl": "http://127.0.0.1:8126/project-assets/ui/strings.en.json",
+          "screens": [
+            {
+              "id": "hud",
+              "label": "HUD"
+            },
+            {
+              "id": "menu",
+              "label": "MENU"
+            },
+            {
+              "id": "results",
+              "label": "RESULTS"
+            }
+          ],
+          "activeScreen": "menu",
+          "size": "1600x900",
+          "target": {
+            "width": 1600,
+            "height": 900
+          },
+          "displayScale": 0.7913,
+          "totalNodes": 19,
+          "boundNodes": 1,
+          "errors": [],
+          "warnings": [],
+          "approximate": true
+        },
+        "dom": {
+          "active": "menu",
+          "nodes": 19,
+          "text": "S Y S T E M   M E N U\nSIMULATION HELD  //  ROUND CLOCK PAUSED\nDISPLAY MODE\nCURRENT  //  BORDERLESS\nWINDOWED\nBORDERLESS\nEXCLUSIVE\nRESUME\nQUIT\n1 / 2 / 3  DISPLAY MODE       ESC  RESUME       Q  QUIT",
+          "frameFits": true
+        },
+        "failures": []
+      },
+      {
+        "id": "results",
+        "state": {
+          "ready": true,
+          "loading": false,
+          "layoutUrl": "/project-assets/ui/layout.json",
+          "themeUrl": "http://127.0.0.1:8126/project-assets/ui/theme.json",
+          "stringsUrl": "http://127.0.0.1:8126/project-assets/ui/strings.en.json",
+          "screens": [
+            {
+              "id": "hud",
+              "label": "HUD"
+            },
+            {
+              "id": "menu",
+              "label": "MENU"
+            },
+            {
+              "id": "results",
+              "label": "RESULTS"
+            }
+          ],
+          "activeScreen": "results",
+          "size": "1600x900",
+          "target": {
+            "width": 1600,
+            "height": 900
+          },
+          "displayScale": 0.7913,
+          "totalNodes": 9,
+          "boundNodes": 2,
+          "errors": [],
+          "warnings": [],
+          "approximate": true
+        },
+        "dom": {
+          "active": "results",
+          "nodes": 9,
+          "text": "R A N G E   C O M P L E T E\nSESSION TERMINATED  //  SCORE LOCKED\nSCORE 12,450\nACCURACY 86%    HITS 37/43    BEST COMBO x9\nPRESS ENTER TO RUN AGAIN",
+          "frameFits": true
+        },
+        "failures": []
+      }
+    ],
+    "screenshot": "screenshots/scene-ui-preview.png",
+    "pass": true,
+    "failures": []
+  },
+  "routes": {
+    "status": {
+      "status": 200,
+      "ok": true,
+      "contentType": "application/json; charset=utf-8",
+      "allow": null
+    },
+    "manifest": {
+      "status": 200,
+      "ok": true,
+      "contentType": "application/json; charset=utf-8",
+      "allow": null
+    },
+    "scene": {
+      "status": 200,
+      "ok": true,
+      "contentType": "application/json; charset=utf-8",
+      "allow": null
+    },
+    "write": {
+      "status": 405,
+      "ok": false,
+      "contentType": "application/json; charset=utf-8",
+      "allow": "GET, HEAD"
+    },
+    "traversal": {
+      "status": 404,
+      "contentType": "application/json; charset=utf-8"
+    },
+    "pass": true,
+    "failures": []
+  },
+  "screenshots": [
+    "screenshots/scene-range.png",
+    "screenshots/scene-range-viewport.png",
+    "screenshots/ui-preview-1600.png",
+    "screenshots/ui-preview-2400.png",
+    "screenshots/ui-preview-900.png",
+    "screenshots/ui-preview-menu.png",
+    "screenshots/ui-preview-results.png",
+    "screenshots/scene-ui-preview.png"
+  ],
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "failures": [],
+  "pass": true,
+  "finishedAt": "2026-10-18T05:15:06.975Z"
+}

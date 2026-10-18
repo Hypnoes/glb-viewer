@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "pack": "neon-range-fixture",
+  "version": "0.1.0-fixture",
+  "note": "Development fixture for glb-viewer scene mode. It mirrors the real assets/manifest.json shape but points at the four review GLBs under samples/neon/. The real pack is preferred by test/scene-smoke.mjs when /project-assets/scenes/range.scene.json is available.",
+  "assets": [
+    {
+      "id": "env.range.static",
+      "type": "model",
+      "path": "range_arena.glb",
+      "tags": ["environment", "static", "range", "interior"],
+      "bounds": { "min": [-18.2, -0.5, -18.2], "max": [18.2, 8.4, 18.2] },
+      "nodes": { "root": "NEON_RANGE_Arena" },
+      "license": "project",
+      "note": "Review snapshot of the closed arena."
+    },
+    {
+      "id": "prp.cover.crate",
+      "type": "model",
+      "path": "cover_crate.glb",
+      "tags": ["prop", "cover", "crate", "cyan"],
+      "bounds": { "min": [-1.2, -0.65, -1.2], "max": [1.2, 0.675, 1.222] },
+      "nodes": { "root": "Cover_Crate" },
+      "license": "project",
+      "note": "Cyan trim crate, box-centre pivot."
+    },
+    {
+      "id": "prp.drone.mk2",
+      "type": "model",
+      "path": "drone_mk2.glb",
+      "tags": ["prop", "target", "drone", "runtime_animated"],
+      "bounds": { "min": [-0.56, -0.56, -0.24], "max": [0.56, 0.56, 0.24] },
+      "nodes": { "root": "Drone_Mk2" },
+      "license": "project",
+      "note": "Rest-pose target drone."
+    },
+    {
+      "id": "wpn.nr01",
+      "type": "model",
+      "path": "weapon_nr01.glb",
+      "tags": ["weapon", "viewmodel"],
+      "bounds": { "min": [-0.12889, -0.270081, -0.576], "max": [0.0815, 0.174, 0.39] },
+      "nodes": { "root": "Weapon_NR01", "muzzle": "Muzzle" },
+      "license": "project",
+      "note": "View-model rifle; not placed by the fixture scene."
+    }
+  ]
+}

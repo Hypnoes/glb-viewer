@@ -1,0 +1,301 @@
+{
+  "schema": 1,
+  "design": { "width": 1600, "height": 900 },
+  "note": "Fixture layout for coarse DOM preview. Node types and binding names follow the Wave 1 UI contract; exact field names may evolve with crates/neon_ui.",
+  "screens": [
+    {
+      "id": "hud",
+      "label": "HUD",
+      "root": {
+        "type": "overlay",
+        "name": "hud-root",
+        "children": [
+          {
+            "type": "panel",
+            "name": "score-panel",
+            "anchor": "top-left",
+            "offset": [36, 36],
+            "size": [344, 122],
+            "direction": "column",
+            "gap": 5,
+            "padding": [18, 16],
+            "style": {
+              "background": "$panel",
+              "borderColor": "$line",
+              "borderWidth": 1,
+              "borderRadius": 2
+            },
+            "children": [
+              {
+                "type": "row",
+                "direction": "row",
+                "align": "center",
+                "children": [
+                  { "type": "text", "text_key": "hud.score", "style": { "color": "$cyan", "fontSize": 10, "letterSpacing": 2.6, "fontWeight": 600 } },
+                  { "type": "spacer" },
+                  { "type": "text", "text": "LIVE", "style": { "color": "$green", "fontSize": 9, "letterSpacing": 1.8, "fontFamily": "$mono" } }
+                ]
+              },
+              { "type": "text", "binding": "score", "style": { "color": "$textBright", "fontSize": 46, "fontWeight": 700, "fontFamily": "$mono", "lineHeight": 1.05 } },
+              { "type": "text", "text": "ACCURACY 86% · COMBO ×4", "style": { "color": "$muted", "fontSize": 11, "fontFamily": "$mono", "letterSpacing": 0.8 } }
+            ]
+          },
+          {
+            "type": "panel",
+            "name": "timer-panel",
+            "anchor": "top-right",
+            "offset": [36, 36],
+            "size": [286, 92],
+            "direction": "column",
+            "gap": 4,
+            "padding": [16, 14],
+            "style": {
+              "background": "$panel",
+              "borderColor": "$line",
+              "borderWidth": 1,
+              "borderRadius": 2
+            },
+            "children": [
+              { "type": "text", "text_key": "hud.time", "style": { "color": "$cyan", "fontSize": 10, "letterSpacing": 2.4 } },
+              { "type": "text", "binding": "timer", "style": { "color": "$textBright", "fontSize": 34, "fontWeight": 600, "fontFamily": "$mono", "lineHeight": 1 } },
+              { "type": "text", "text_key": "hud.phase", "style": { "color": "$muted", "fontSize": 9, "fontFamily": "$mono", "letterSpacing": 0.9 } }
+            ]
+          },
+          {
+            "type": "panel",
+            "name": "phase-panel",
+            "anchor": "bottom-left",
+            "offset": [36, 34],
+            "size": [384, 86],
+            "direction": "column",
+            "gap": 6,
+            "padding": [16, 14],
+            "style": {
+              "background": "$panel",
+              "borderColor": "$line",
+              "borderWidth": 1,
+              "borderRadius": 2
+            },
+            "children": [
+              {
+                "type": "row",
+                "direction": "row",
+                "align": "baseline",
+                "children": [
+                  { "type": "text", "text_key": "hud.accuracy", "style": { "color": "$muted", "fontSize": 9, "letterSpacing": 2, "fontFamily": "$mono" } },
+                  { "type": "spacer" },
+                  { "type": "text", "binding": "accuracy", "style": { "color": "$green", "fontSize": 20, "fontWeight": 700, "fontFamily": "$mono" } }
+                ]
+              },
+              { "type": "bar", "name": "accuracy-bar", "value": 0.86, "style": { "color": "$green", "height": 4 } },
+              { "type": "text", "text_key": "hud.combo", "style": { "color": "$muted", "fontSize": 9, "letterSpacing": 2, "fontFamily": "$mono" } }
+            ]
+          },
+          {
+            "type": "panel",
+            "name": "ammo-panel",
+            "anchor": "bottom-right",
+            "offset": [36, 34],
+            "size": [286, 96],
+            "direction": "column",
+            "gap": 4,
+            "padding": [16, 14],
+            "style": {
+              "background": "$panel",
+              "borderColor": "$line",
+              "borderWidth": 1,
+              "borderRadius": 2
+            },
+            "children": [
+              { "type": "text", "text_key": "hud.ammo", "style": { "color": "$cyan", "fontSize": 10, "letterSpacing": 2.4 } },
+              {
+                "type": "row",
+                "direction": "row",
+                "align": "baseline",
+                "gap": 8,
+                "children": [
+                  { "type": "text", "binding": "ammo", "style": { "color": "$textBright", "fontSize": 46, "fontWeight": 700, "fontFamily": "$mono", "lineHeight": 1 } },
+                  { "type": "text", "text": "/", "style": { "color": "$muted", "fontSize": 22, "fontFamily": "$mono" } },
+                  { "type": "text", "binding": "reserve", "style": { "color": "$orange", "fontSize": 24, "fontFamily": "$mono" } },
+                  { "type": "spacer" },
+                  { "type": "text", "text": "12 / 48", "style": { "color": "$muted", "fontSize": 9, "fontFamily": "$mono" } }
+                ]
+              },
+              { "type": "text", "text_key": "hud.reserve", "style": { "color": "$muted", "fontSize": 9, "letterSpacing": 1.8, "fontFamily": "$mono" } }
+            ]
+          },
+          {
+            "type": "crosshair",
+            "name": "crosshair",
+            "anchor": "center",
+            "style": { "color": "$cyan", "size": 20, "gap": 9, "thickness": 2 }
+          },
+          {
+            "type": "panel",
+            "name": "lock-readout",
+            "anchor": "top-center",
+            "offset": [0, 190],
+            "size": [196, 34],
+            "direction": "row",
+            "align": "center",
+            "justify": "center",
+            "gap": 8,
+            "style": {
+              "background": [0.043, 0.071, 0.102, 0.7],
+              "borderColor": "$cyan",
+              "borderWidth": 1,
+              "borderRadius": 2
+            },
+            "children": [
+              { "type": "text", "text": "◈", "style": { "color": "$cyan", "fontSize": 14 } },
+              { "type": "text", "text_key": "hud.lock", "style": { "color": "$cyan", "fontSize": 10, "letterSpacing": 2.2 } },
+              { "type": "text", "text": "78%", "style": { "color": "$muted", "fontSize": 10, "fontFamily": "$mono" } }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "hit-popup",
+            "anchor": "center",
+            "offset": [0, -92],
+            "text_key": "hud.hit",
+            "style": { "color": "$orange", "fontSize": 26, "fontWeight": 700, "fontFamily": "$mono", "letterSpacing": 2 }
+          },
+          {
+            "type": "text",
+            "name": "status-line",
+            "anchor": "bottom-center",
+            "offset": [0, 44],
+            "text_key": "hud.status",
+            "style": { "color": "$muted", "fontSize": 10, "fontFamily": "$mono", "letterSpacing": 2.4 }
+          }
+        ]
+      }
+    },
+    {
+      "id": "menu",
+      "label": "MENU",
+      "root": {
+        "type": "overlay",
+        "name": "menu-root",
+        "style": { "background": [0.004, 0.008, 0.016, 0.82] },
+        "children": [
+          {
+            "type": "panel",
+            "name": "menu-panel",
+            "anchor": "center",
+            "size": [560, 486],
+            "direction": "column",
+            "gap": 16,
+            "padding": [40, 36],
+            "style": {
+              "background": "$panelSolid",
+              "borderColor": "$line",
+              "borderWidth": 1,
+              "borderRadius": 2
+            },
+            "children": [
+              { "type": "text", "text_key": "menu.subtitle", "style": { "color": "$cyan", "fontSize": 10, "letterSpacing": 3.4 } },
+              { "type": "text", "text_key": "menu.title", "style": { "color": "$textBright", "fontSize": 58, "fontWeight": 700, "letterSpacing": 6 } },
+              { "type": "bar", "value": 0.4, "style": { "color": "$cyan", "height": 2 } },
+              { "type": "spacer" },
+              { "type": "button", "text_key": "menu.resume", "style": { "color": "$bg", "background": "$cyan", "borderColor": "$cyan", "borderWidth": 1, "fontSize": 14, "letterSpacing": 2.2, "padding": [18, 13] } },
+              { "type": "button", "text_key": "menu.window", "style": { "color": "$text", "background": "transparent", "borderColor": "$line", "borderWidth": 1, "fontSize": 13, "letterSpacing": 2, "padding": [18, 12] } },
+              { "type": "button", "text_key": "menu.restart", "style": { "color": "$text", "background": "transparent", "borderColor": "$line", "borderWidth": 1, "fontSize": 13, "letterSpacing": 2, "padding": [18, 12] } },
+              { "type": "button", "text_key": "menu.quit", "style": { "color": "$red", "background": "transparent", "borderColor": "$red", "borderWidth": 1, "fontSize": 13, "letterSpacing": 2, "padding": [18, 12] } },
+              { "type": "spacer" },
+              { "type": "text", "text_key": "menu.hint", "style": { "color": "$muted", "fontSize": 10, "fontFamily": "$mono", "letterSpacing": 1.4 } }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "results",
+      "label": "RESULTS",
+      "root": {
+        "type": "overlay",
+        "name": "results-root",
+        "style": { "background": [0.004, 0.008, 0.016, 0.78] },
+        "children": [
+          {
+            "type": "panel",
+            "name": "results-panel",
+            "anchor": "center",
+            "size": [680, 520],
+            "direction": "column",
+            "gap": 14,
+            "padding": [42, 38],
+            "style": {
+              "background": "$panelSolid",
+              "borderColor": "$line",
+              "borderWidth": 1,
+              "borderRadius": 2
+            },
+            "children": [
+              { "type": "text", "text": "ROUND 01 / CLEARED", "style": { "color": "$cyan", "fontSize": 10, "letterSpacing": 3.4 } },
+              { "type": "text", "text_key": "results.title", "style": { "color": "$textBright", "fontSize": 46, "fontWeight": 700, "letterSpacing": 1.5 } },
+              { "type": "text", "text_key": "results.score", "style": { "color": "$muted", "fontSize": 10, "letterSpacing": 2.4 } },
+              { "type": "text", "binding": "score", "style": { "color": "$orange", "fontSize": 64, "fontWeight": 700, "fontFamily": "$mono", "lineHeight": 1 } },
+              {
+                "type": "row",
+                "direction": "row",
+                "gap": 18,
+                "children": [
+                  {
+                    "type": "panel",
+                    "name": "stat-accuracy",
+                    "size": [186, 80],
+                    "direction": "column",
+                    "gap": 4,
+                    "padding": [14, 12],
+                    "style": { "background": [0.043, 0.071, 0.102, 0.7], "borderColor": "$line", "borderWidth": 1 },
+                    "children": [
+                      { "type": "text", "text_key": "results.accuracy", "style": { "color": "$muted", "fontSize": 9, "letterSpacing": 2, "fontFamily": "$mono" } },
+                      { "type": "text", "binding": "accuracy", "style": { "color": "$green", "fontSize": 30, "fontWeight": 700, "fontFamily": "$mono" } }
+                    ]
+                  },
+                  {
+                    "type": "panel",
+                    "name": "stat-hits",
+                    "size": [186, 80],
+                    "direction": "column",
+                    "gap": 4,
+                    "padding": [14, 12],
+                    "style": { "background": [0.043, 0.071, 0.102, 0.7], "borderColor": "$line", "borderWidth": 1 },
+                    "children": [
+                      { "type": "text", "text_key": "results.hits", "style": { "color": "$muted", "fontSize": 9, "letterSpacing": 2, "fontFamily": "$mono" } },
+                      { "type": "text", "text": "37 / 43", "style": { "color": "$textBright", "fontSize": 30, "fontWeight": 700, "fontFamily": "$mono" } }
+                    ]
+                  },
+                  {
+                    "type": "panel",
+                    "name": "stat-combo",
+                    "size": [186, 80],
+                    "direction": "column",
+                    "gap": 4,
+                    "padding": [14, 12],
+                    "style": { "background": [0.043, 0.071, 0.102, 0.7], "borderColor": "$line", "borderWidth": 1 },
+                    "children": [
+                      { "type": "text", "text_key": "results.best", "style": { "color": "$muted", "fontSize": 9, "letterSpacing": 2, "fontFamily": "$mono" } },
+                      { "type": "text", "text": "×9", "style": { "color": "$cyan", "fontSize": 30, "fontWeight": 700, "fontFamily": "$mono" } }
+                    ]
+                  }
+                ]
+              },
+              { "type": "spacer" },
+              {
+                "type": "row",
+                "direction": "row",
+                "gap": 12,
+                "children": [
+                  { "type": "button", "text_key": "results.restart", "width": 300, "style": { "color": "$bg", "background": "$cyan", "borderColor": "$cyan", "borderWidth": 1, "fontSize": 14, "letterSpacing": 2.2, "padding": [18, 13] } },
+                  { "type": "button", "text_key": "results.menu", "width": 300, "style": { "color": "$text", "background": "transparent", "borderColor": "$line", "borderWidth": 1, "fontSize": 13, "letterSpacing": 2, "padding": [18, 12] } }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

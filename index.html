@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#04060b">
+  <meta name="description" content="GLB Inspector — an offline, realtime glTF/GLB asset review tool.">
+  <title>GLB Inspector — Realtime Asset Review</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23060b12'/%3E%3Cpath d='M16 5.5 26 11v10L16 26.5 6 21V11z' fill='none' stroke='%2346e6ff' stroke-width='1.5'/%3E%3Cpath d='M16 5.5V16m0 0 10 5m-10-5L6 21' fill='none' stroke='%23ff8a2a' stroke-width='1.2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/three.module.js",
+        "three/addons/": "./vendor/three/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app" class="app">
+    <div class="ambient-grid" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="GLB Inspector home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M20 3.5 35.5 12v16L20 36.5 4.5 28V12z" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M20 3.5V20m0 0 15.5 8M20 20 4.5 28" stroke="var(--orange)" stroke-width="1"/>
+            <circle cx="20" cy="20" r="2.1" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-title">GLB<span class="brand-slash">/</span>INSPECTOR</span>
+          <span class="brand-sub">REALTIME ASSET REVIEW</span>
+        </span>
+      </a>
+
+      <div class="topbar-center">
+        <span class="global-status">
+          <span id="global-status-dot" class="status-dot"></span>
+          <span id="global-status-text">ENGINE STANDBY</span>
+        </span>
+      </div>
+
+      <nav class="topbar-actions" aria-label="Primary">
+        <button id="btn-panel-left" class="btn btn-icon panel-toggle" type="button" title="Toggle asset panel" aria-label="Toggle asset panel">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="15" height="13" rx="1.5" stroke="currentColor"/><path d="M7.5 3.5v13" stroke="currentColor"/></svg>
+          <span class="btn-label">Asset</span>
+        </button>
+        <button id="btn-panel-right" class="btn btn-icon panel-toggle" type="button" title="Toggle controls panel" aria-label="Toggle controls panel">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="15" height="13" rx="1.5" stroke="currentColor"/><path d="M12.5 3.5v13" stroke="currentColor"/></svg>
+          <span class="btn-label">Controls</span>
+        </button>
+
+        <div class="samples-wrap">
+          <button id="btn-samples" class="btn btn-ghost" type="button" aria-haspopup="true" aria-expanded="false">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5.5h5l1.5 2H17v8.5H3z" stroke="currentColor"/><path d="M3 5.5V4h5l1.2 1.5" stroke="currentColor"/></svg>
+            <span class="btn-label">Samples</span>
+            <svg class="chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m3 4.5 3 3 3-3" stroke="currentColor"/></svg>
+          </button>
+          <div id="samples-popover" class="samples-popover" hidden>
+            <div class="popover-head">
+              <span>REFERENCE ASSETS</span>
+              <span class="micro">LOCAL / OFFLINE</span>
+            </div>
+            <div id="samples-popover-list" class="popover-list"></div>
+          </div>
+        </div>
+
+        <button id="btn-open" class="btn btn-primary" type="button">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 13V3.5M6.5 7 10 3.5 13.5 7M4 12.5v3A1.5 1.5 0 0 0 5.5 17h9a1.5 1.5 0 0 0 1.5-1.5v-3" stroke="currentColor" stroke-width="1.4"/></svg>
+          <span>Open Model</span>
+        </button>
+
+        <button id="btn-help" class="btn btn-icon help-trigger" type="button" title="Shortcuts and help" aria-label="Shortcuts and help">
+          <span class="help-glyph">?</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="workspace">
+      <aside id="left-panel" class="panel panel-left" aria-label="Asset inspector">
+        <div class="panel-head">
+          <span class="panel-kicker"><i>01</i> ASSET</span>
+          <div class="panel-head-end">
+            <span id="asset-chip" class="chip chip-muted">NO ASSET</span>
+            <button id="btn-close-left" class="panel-close" type="button" aria-label="Close asset panel">×</button>
+          </div>
+        </div>
+
+        <div class="panel-scroll">
+          <section class="asset-card">
+            <div class="asset-glyph" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M24 5 42 15v18L24 43 6 33V15z" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M24 5v18m0 0 18 10M24 23 6 33" stroke="currentColor" stroke-width=".8" opacity=".55"/>
+                <path d="m15 10.5 18 10v11" stroke="var(--orange)" stroke-width="1" opacity=".7"/>
+              </svg>
+            </div>
+            <div class="asset-ident">
+              <span id="asset-format" class="eyebrow">AWAITING INPUT</span>
+              <h2 id="asset-name">No model mounted</h2>
+              <p id="asset-source">Drop a file or load a reference asset.</p>
+            </div>
+          </section>
+
+          <div id="meta-grid" class="meta-grid">
+            <div class="meta">
+              <span class="meta-label">ROOT FILE</span>
+              <strong id="meta-size">—</strong>
+            </div>
+            <div class="meta">
+              <span class="meta-label">glTF VERSION</span>
+              <strong id="meta-version">—</strong>
+            </div>
+            <div class="meta meta-wide">
+              <span class="meta-label">GENERATOR</span>
+              <strong id="meta-generator" title="">—</strong>
+            </div>
+            <div id="meta-copyright-wrap" class="meta meta-wide" hidden>
+              <span class="meta-label">COPYRIGHT</span>
+              <strong id="meta-copyright" title="">—</strong>
+            </div>
+          </div>
+
+          <div id="neon-meta" class="neon-meta" hidden>
+            <div class="neon-meta-head">
+              <span>NEON RANGE</span>
+              <span id="neon-asset-id" class="neon-id">—</span>
+            </div>
+            <p id="neon-note">—</p>
+            <div class="neon-links">
+              <span class="meta-label">SOURCE</span>
+              <code id="neon-source">—</code>
+            </div>
+          </div>
+
+          <section id="scene-section" class="panel-section scene-section" hidden>
+            <div class="section-head">
+              <h3>Scene</h3>
+              <span class="section-note">READ-ONLY</span>
+            </div>
+            <div class="scene-ident">
+              <strong id="scene-id">—</strong>
+              <span id="scene-source">—</span>
+            </div>
+            <div class="stat-grid scene-stat-grid">
+              <div class="stat"><span>ASSETS</span><strong id="scene-assets">—</strong></div>
+              <div class="stat"><span>INSTANCES</span><strong id="scene-instances">—</strong></div>
+              <div class="stat"><span>TARGETS</span><strong id="scene-targets">—</strong></div>
+              <div class="stat"><span>COLLIDERS</span><strong id="scene-colliders">—</strong></div>
+              <div class="stat"><span>LIGHTS</span><strong id="scene-lights">—</strong></div>
+              <div class="stat"><span>TRIANGLES</span><strong id="scene-triangles">—</strong></div>
+            </div>
+            <div class="scene-detail">
+              <div><span>ENVIRONMENT</span><code id="scene-environment">—</code></div>
+              <div><span>CAMERA</span><code id="scene-camera">—</code></div>
+              <div><span>POST</span><code id="scene-post">—</code></div>
+              <div><span>BOUNDS</span><code id="scene-bounds">—</code></div>
+            </div>
+            <p id="scene-note" class="scene-note">Read-only composition of manifest + scene JSON.</p>
+            <div id="scene-warnings" class="scene-warnings" hidden></div>
+          </section>
+
+          <section id="ui-section" class="panel-section ui-section" hidden>
+            <div class="section-head">
+              <h3>UI Preview</h3>
+              <span class="section-note">APPROXIMATE</span>
+            </div>
+            <p class="scene-note">DOM/CSS approximation of theme + layout + strings. Bevy remains the authority for pixels.</p>
+            <div class="scene-detail">
+              <div><span>LAYOUT</span><code id="ui-layout-path">—</code></div>
+              <div><span>THEME</span><code id="ui-theme-path">—</code></div>
+              <div><span>STRINGS</span><code id="ui-strings-path">—</code></div>
+              <div><span>SCREENS</span><code id="ui-screens">—</code></div>
+              <div><span>NODES</span><code id="ui-nodes">—</code></div>
+              <div><span>VIEWPORT</span><code id="ui-viewport">—</code></div>
+            </div>
+            <div id="ui-warnings" class="scene-warnings" hidden></div>
+          </section>
+
+          <section id="geometry-section" class="panel-section">
+            <div class="section-head">
+              <h3>Geometry</h3>
+              <span class="section-note">METERS</span>
+            </div>
+            <div class="dimensions">
+              <span class="dimension-axis">W</span><strong id="dim-x">—</strong>
+              <span class="dimension-x">×</span>
+              <span class="dimension-axis">H</span><strong id="dim-y">—</strong>
+              <span class="dimension-x">×</span>
+              <span class="dimension-axis">D</span><strong id="dim-z">—</strong>
+              <span class="unit">m</span>
+            </div>
+            <div class="stat-grid">
+              <div class="stat"><span>TRIANGLES</span><strong id="stat-triangles">—</strong></div>
+              <div class="stat"><span>VERTICES</span><strong id="stat-vertices">—</strong></div>
+              <div class="stat"><span>MESHES</span><strong id="stat-meshes">—</strong></div>
+              <div class="stat"><span>NODES</span><strong id="stat-nodes">—</strong></div>
+              <div class="stat"><span>MATERIALS</span><strong id="stat-materials">—</strong></div>
+              <div class="stat"><span>TEXTURES</span><strong id="stat-textures">—</strong></div>
+              <div class="stat"><span>BONES</span><strong id="stat-bones">—</strong></div>
+              <div class="stat"><span>ANIMS</span><strong id="stat-anims">—</strong></div>
+            </div>
+          </section>
+
+          <section id="neon-anim-section" class="panel-section anim-file-section">
+            <div class="section-head">
+              <h3>Animation Data</h3>
+              <span class="section-note">SIDECAR</span>
+            </div>
+            <p id="anim-file-note" class="anim-file-note">Load a NEON RANGE .anims.json library for the current model.</p>
+            <button id="btn-load-anims" class="btn btn-control anim-file-btn" type="button">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 13V3.5M6.5 7 10 3.5 13.5 7M4 12.5v3A1.5 1.5 0 0 0 5.5 17h9a1.5 1.5 0 0 0 1.5-1.5v-3" stroke="currentColor"/></svg>
+              Load .anims.json
+            </button>
+            <input id="anims-input" type="file" hidden accept=".json,application/json">
+          </section>
+
+          <section id="hierarchy-section" class="panel-section">
+            <div class="section-head">
+              <h3>Hierarchy</h3>
+              <span id="hierarchy-count" class="section-note">0 NODES</span>
+            </div>
+            <div id="hierarchy-tree" class="hierarchy-tree">
+              <div class="empty-mini">Scene nodes will appear here.</div>
+            </div>
+          </section>
+
+          <section id="materials-section" class="panel-section section-materials">
+            <div class="section-head">
+              <h3>Materials</h3>
+              <span id="materials-count" class="section-note">0 FOUND</span>
+            </div>
+            <div id="materials-list" class="materials-list">
+              <div class="empty-mini">Base color and emissive swatches appear here.</div>
+            </div>
+            <div class="material-legend">
+              <span><i class="legend-dot legend-base"></i>BASE COLOR</span>
+              <span><i class="legend-dot legend-emissive"></i>EMISSIVE</span>
+            </div>
+          </section>
+        </div>
+      </aside>
+
+      <section id="stage" class="stage" data-bg="gradient" aria-label="3D viewport">
+        <canvas id="viewport"></canvas>
+        <div class="stage-vignette" aria-hidden="true"></div>
+        <div class="stage-scanlines" aria-hidden="true"></div>
+
+        <div class="stage-top">
+          <div class="stage-readout">
+            <span class="stage-mode"><i class="live-dot"></i> PERSPECTIVE / <span id="stage-model-name">NO ASSET</span></span>
+            <span id="stage-subreadout" class="stage-subreadout">ORBIT CAMERA · ACES</span>
+          </div>
+          <div class="stage-tools">
+            <button id="btn-stage-frame" class="stage-tool" type="button" title="Frame model (F)" aria-label="Frame model">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 7V3.5H7M13 3.5h3.5V7M16.5 13v3.5H13M7 16.5H3.5V13" stroke="currentColor"/><circle cx="10" cy="10" r="2" stroke="currentColor"/></svg>
+            </button>
+            <button id="btn-stage-screenshot" class="stage-tool" type="button" title="Save PNG (S)" aria-label="Save PNG">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="5.5" width="14" height="10.5" rx="1.5" stroke="currentColor"/><circle cx="10" cy="10.7" r="2.8" stroke="currentColor"/><path d="M7 5.5 8.2 3.5h3.6L13 5.5" stroke="currentColor"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="scene-hud" class="scene-hud" hidden>
+          <span class="scene-hud-kicker">SCENE INSPECTOR</span>
+          <strong id="scene-hud-title">SCENE</strong>
+          <div class="scene-hud-stats">
+            <span><b id="scene-hud-assets">—</b> ASSETS</span>
+            <span><b id="scene-hud-instances">—</b> INSTANCES</span>
+            <span><b id="scene-hud-targets">—</b> TARGETS</span>
+            <span><b id="scene-hud-colliders">—</b> COLLIDERS</span>
+          </div>
+        </div>
+
+        <div id="empty-state" class="empty-state">
+          <div class="empty-inner">
+            <div class="empty-intro">
+              <div class="eyebrow"><span class="eyebrow-line"></span>NO ASSET MOUNTED / DROP ZONE ACTIVE</div>
+              <h1>See every polygon.<br><em>Know every material.</em></h1>
+              <p>Drop a glTF asset to inspect geometry, materials, hierarchy and animation — rendered locally with a zero-upload pipeline.</p>
+            </div>
+
+            <div id="dropzone" class="dropzone" tabindex="0" role="group" aria-label="Model drop zone">
+              <i class="corner corner-tl"></i><i class="corner corner-tr"></i>
+              <i class="corner corner-bl"></i><i class="corner corner-br"></i>
+              <div class="dropzone-icon" aria-hidden="true">
+                <svg viewBox="0 0 52 52" fill="none">
+                  <path d="M26 7 45 18v20L26 49 7 38V18z" stroke="currentColor" stroke-width="1.2"/>
+                  <path d="M26 7v21m0 0 19 10M26 28 7 38" stroke="currentColor" stroke-width=".7" opacity=".5"/>
+                  <path d="M26 31v11m-4.5-4.5L26 42l4.5-4.5" stroke="var(--orange)" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="dropzone-copy">
+                <strong>Drop GLB / glTF assets here</strong>
+                <span>or choose files — include .bin, textures, and .anims.json sidecars</span>
+              </div>
+              <div class="dropzone-actions">
+                <button id="browse-btn" class="btn btn-primary" type="button">Browse files</button>
+                <button id="folder-btn" class="btn btn-quiet" type="button">
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5.5h5l1.5 2H17v8.5H3z" stroke="currentColor"/><path d="M3 5.5V4h5l1.2 1.5" stroke="currentColor"/></svg>
+                  Open folder
+                </button>
+              </div>
+              <small>GLB · GLTF + BIN + TEXTURES <span class="dot-sep">/</span> MULTI-FILE READY <span class="dot-sep">/</span> 100% LOCAL</small>
+            </div>
+
+            <div class="sample-area">
+              <div class="sample-head">
+                <span>OR START WITH A REFERENCE ASSET</span>
+                <span class="sample-head-note">LOCAL COPIES / ZERO UPLOAD</span>
+              </div>
+              <div id="sample-groups" class="sample-groups" role="tablist" aria-label="Sample groups"></div>
+              <div id="sample-cards" class="sample-cards" aria-label="Sample models">
+                <div class="sample-skeleton"></div>
+                <div class="sample-skeleton"></div>
+                <div class="sample-skeleton"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="loading-overlay" class="loading-overlay" hidden role="status" aria-live="polite">
+          <div class="loader-card">
+            <div class="loader-top">
+              <div class="loader-orbit" aria-hidden="true"><i></i><i></i><span></span></div>
+              <div>
+                <div class="eyebrow">ASSET PIPELINE</div>
+                <h2 id="loading-title">Loading model</h2>
+              </div>
+              <span id="loading-pct" class="loader-pct">—</span>
+            </div>
+            <div class="progress-track"><div id="loading-bar" class="progress-bar"></div></div>
+            <div class="loader-foot">
+              <span id="loading-detail">Reading file…</span>
+              <span class="micro">LOCAL RENDER</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="error-state" class="error-state" hidden role="alert">
+          <div class="error-card">
+            <div class="error-signal" aria-hidden="true">!</div>
+            <div class="eyebrow">LOAD INTERRUPTED</div>
+            <h2 id="error-title">Could not load model</h2>
+            <p id="error-detail">The viewer could not read this asset.</p>
+            <div class="error-actions">
+              <button id="btn-error-open" class="btn btn-primary" type="button">Choose another file</button>
+              <button id="btn-error-dismiss" class="btn btn-quiet" type="button">Dismiss</button>
+            </div>
+            <small>Tip: for .gltf assets, select the .gltf, .bin and all textures together, or open the whole folder.</small>
+          </div>
+        </div>
+
+        <div class="axis-gizmo" aria-hidden="true">
+          <svg viewBox="0 0 96 96">
+            <circle cx="48" cy="48" r="34" fill="rgba(4,8,14,.52)" stroke="rgba(70,230,255,.12)"/>
+            <line id="gizmo-x" x1="48" y1="48" x2="70" y2="48" stroke="#ff8a2a" stroke-width="1.4"/>
+            <line id="gizmo-y" x1="48" y1="48" x2="48" y2="26" stroke="#8dffb0" stroke-width="1.4"/>
+            <line id="gizmo-z" x1="48" y1="48" x2="60" y2="58" stroke="#46e6ff" stroke-width="1.4"/>
+            <circle id="gizmo-dot-x" cx="70" cy="48" r="2.5" fill="#ff8a2a"/>
+            <circle id="gizmo-dot-y" cx="48" cy="26" r="2.5" fill="#8dffb0"/>
+            <circle id="gizmo-dot-z" cx="60" cy="58" r="2.5" fill="#46e6ff"/>
+            <text id="gizmo-label-x" x="78" y="51">X</text>
+            <text id="gizmo-label-y" x="45" y="19">Y</text>
+            <text id="gizmo-label-z" x="66" y="70">Z</text>
+          </svg>
+        </div>
+
+        <div id="stage-hint" class="stage-hint">
+          <span><b>LMB</b> ORBIT</span><span><b>RMB</b> PAN</span><span><b>SCROLL</b> ZOOM</span><span><b>DBL-CLICK</b> FRAME</span>
+        </div>
+
+        <button id="btn-stage-help" class="btn-stage-help" type="button" aria-label="Show shortcuts">?</button>
+
+        <div id="ui-preview" class="ui-preview" hidden>
+          <div class="ui-preview-bar">
+            <div class="ui-preview-title">
+              <span class="eyebrow"><span class="eyebrow-line"></span>UI PREVIEW / APPROXIMATE</span>
+              <span class="micro">DOM + CSS · BEVY IS AUTHORITATIVE</span>
+            </div>
+            <div class="ui-preview-controls">
+              <div id="ui-screen-tabs" class="segmented" role="group" aria-label="UI screen"></div>
+              <div id="ui-size-tabs" class="segmented" role="group" aria-label="Preview viewport">
+                <button type="button" data-ui-size="1600x900">1600×900</button>
+                <button type="button" data-ui-size="2400x1350">2400×1350</button>
+                <button type="button" data-ui-size="900">900 WIDE</button>
+              </div>
+            </div>
+          </div>
+          <div id="ui-preview-stage" class="ui-preview-stage">
+            <div id="ui-preview-frame" class="ui-preview-frame">
+              <div id="ui-preview-root" class="ui-preview-root"></div>
+            </div>
+          </div>
+          <div class="ui-preview-foot">
+            <span id="ui-preview-caption">APPROXIMATE PREVIEW</span>
+            <span class="micro">NOT PIXEL-ACCURATE · CHECK FINAL LAYOUT IN BEVY</span>
+          </div>
+        </div>
+      </section>
+
+      <aside id="right-panel" class="panel panel-right" aria-label="Scene controls">
+        <div class="panel-head">
+          <span class="panel-kicker"><i>02</i> CONTROLS</span>
+          <div class="panel-head-end">
+            <span class="chip chip-live"><i></i>LIVE</span>
+            <button id="btn-close-right" class="panel-close" type="button" aria-label="Close controls panel">×</button>
+          </div>
+        </div>
+
+        <div class="panel-scroll">
+          <section class="panel-section section-first">
+            <div class="section-head">
+              <h3>Viewport</h3>
+              <span class="section-note">RENDER</span>
+            </div>
+            <div class="switch-list">
+              <label class="switch-row" for="toggle-wireframe">
+                <span class="switch-copy"><span>Wireframe</span><kbd>W</kbd></span>
+                <button id="toggle-wireframe" class="switch" type="button" role="switch" aria-checked="false" aria-label="Wireframe"><span></span></button>
+              </label>
+              <label class="switch-row" for="toggle-grid">
+                <span class="switch-copy"><span>Grid</span><kbd>G</kbd></span>
+                <button id="toggle-grid" class="switch" type="button" role="switch" aria-checked="true" aria-label="Grid"><span></span></button>
+              </label>
+              <label class="switch-row" for="toggle-axes">
+                <span class="switch-copy"><span>Axes</span><kbd>A</kbd></span>
+                <button id="toggle-axes" class="switch" type="button" role="switch" aria-checked="false" aria-label="Axes"><span></span></button>
+              </label>
+              <label class="switch-row" for="toggle-bounds">
+                <span class="switch-copy"><span>Bounding box</span><kbd>B</kbd></span>
+                <button id="toggle-bounds" class="switch" type="button" role="switch" aria-checked="false" aria-label="Bounding box"><span></span></button>
+              </label>
+              <label class="switch-row" for="toggle-autorotate">
+                <span class="switch-copy"><span>Auto-rotate</span><kbd>R</kbd></span>
+                <button id="toggle-autorotate" class="switch" type="button" role="switch" aria-checked="false" aria-label="Auto-rotate"><span></span></button>
+              </label>
+              <label class="switch-row" for="toggle-shadows">
+                <span class="switch-copy"><span>Shadow catcher</span><kbd>—</kbd></span>
+                <button id="toggle-shadows" class="switch" type="button" role="switch" aria-checked="true" aria-label="Shadow catcher"><span></span></button>
+              </label>
+            </div>
+          </section>
+
+          <section class="panel-section">
+            <div class="section-head">
+              <h3>Lighting</h3>
+              <span class="section-note">STUDIO</span>
+            </div>
+            <div class="range-field">
+              <div class="range-label"><label for="exposure">Exposure</label><output id="exposure-value" for="exposure">1.00</output></div>
+              <input id="exposure" class="range" type="range" min="0" max="2" step="0.01" value="1">
+            </div>
+            <div class="range-field">
+              <div class="range-label"><label for="env-intensity">Environment</label><output id="env-intensity-value" for="env-intensity">1.10</output></div>
+              <input id="env-intensity" class="range" type="range" min="0" max="3" step="0.05" value="1.1">
+            </div>
+            <div class="field-label">BACKGROUND</div>
+            <div id="background-seg" class="segmented" role="group" aria-label="Background style">
+              <button type="button" data-bgmode="dark">Dark</button>
+              <button type="button" data-bgmode="gradient" class="active">Gradient</button>
+              <button type="button" data-bgmode="transparent">Clear</button>
+            </div>
+          </section>
+
+          <section id="animation-section" class="panel-section animation-section" hidden>
+            <div class="section-head">
+              <h3>Animation</h3>
+              <span id="anim-badge" class="section-note">1 CLIP</span>
+            </div>
+            <div class="anim-source-row">
+              <span class="field-label">SOURCE</span>
+              <span id="anim-source" class="anim-source" title="—">—</span>
+            </div>
+            <label class="field-label" for="anim-clip">CLIP</label>
+            <div class="select-wrap">
+              <select id="anim-clip" class="select"></select>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m3 4.5 3 3 3-3" stroke="currentColor"/></svg>
+            </div>
+            <div class="transport">
+              <button id="anim-play" class="play-btn" type="button" aria-label="Pause animation">
+                <svg class="icon-play" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m7 4 8.5 6L7 16z" fill="currentColor"/></svg>
+                <svg class="icon-pause" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 4h3v12H6zM11 4h3v12h-3z" fill="currentColor"/></svg>
+              </button>
+              <div class="transport-readout">
+                <span id="anim-time">00:00.0</span>
+                <span class="transport-sep">/</span>
+                <span id="anim-duration">00:00.0</span>
+              </div>
+              <span id="anim-speed-readout" class="speed-readout">1.00×</span>
+            </div>
+            <input id="anim-scrub" class="range range-scrub" type="range" min="0" max="1000" step="1" value="0" aria-label="Animation timeline">
+            <div class="range-field speed-field">
+              <div class="range-label"><label for="anim-speed">Speed</label><output id="anim-speed-value" for="anim-speed">1.00×</output></div>
+              <input id="anim-speed" class="range" type="range" min="0.1" max="3" step="0.05" value="1">
+            </div>
+          </section>
+
+          <section class="panel-section">
+            <div class="section-head">
+              <h3>Camera</h3>
+              <span class="section-note">ORBIT</span>
+            </div>
+            <div class="camera-actions">
+              <button id="btn-frame" class="btn btn-control" type="button">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 7V3.5H7M13 3.5h3.5V7M16.5 13v3.5H13M7 16.5H3.5V13" stroke="currentColor"/><circle cx="10" cy="10" r="2" stroke="currentColor"/></svg>
+                Frame model <kbd>F</kbd>
+              </button>
+              <button id="btn-reset" class="btn btn-control" type="button">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 7a7 7 0 1 1-.3 5M4 3v4h4" stroke="currentColor"/></svg>
+                Reset view
+              </button>
+              <button id="btn-screenshot" class="btn btn-control" type="button">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="5.5" width="14" height="10.5" rx="1.5" stroke="currentColor"/><circle cx="10" cy="10.7" r="2.8" stroke="currentColor"/><path d="M7 5.5 8.2 3.5h3.6L13 5.5" stroke="currentColor"/></svg>
+                Save PNG <kbd>S</kbd>
+              </button>
+            </div>
+          </section>
+
+          <section id="selection-section" class="panel-section selection-section" hidden>
+            <div class="section-head">
+              <h3>Selection</h3>
+              <span class="section-note">MESH</span>
+            </div>
+            <div class="selection-card">
+              <div class="selection-name" id="selection-name">—</div>
+              <div class="selection-type" id="selection-type">—</div>
+              <div class="selection-stats">
+                <div><span>TRIANGLES</span><strong id="selection-tris">—</strong></div>
+                <div><span>MATERIAL</span><strong id="selection-materials">—</strong></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </aside>
+
+      <button id="panel-scrim" class="panel-scrim" type="button" aria-label="Close panels"></button>
+    </main>
+
+    <footer class="statusbar">
+      <div class="status-left">
+        <span class="status-item"><i id="status-dot" class="status-dot"></i><span id="status-mode">STANDBY</span></span>
+        <span class="status-divider"></span>
+        <span id="status-hint" class="status-hint">DROP A MODEL OR OPEN A SAMPLE</span>
+      </div>
+      <div class="status-right">
+        <span class="metric"><span>FPS</span><strong id="metric-fps">—</strong></span>
+        <span class="metric"><span>CALLS</span><strong id="metric-calls">0</strong></span>
+        <span class="metric"><span>TRIS</span><strong id="metric-tris">0</strong></span>
+        <span class="metric metric-selected"><span>SEL</span><strong id="metric-selected" title="">—</strong></span>
+        <span class="metric"><span>LOAD</span><strong id="metric-load">—</strong></span>
+      </div>
+    </footer>
+  </div>
+
+  <div id="drop-overlay" class="drop-overlay" hidden>
+    <div class="drop-overlay-frame">
+      <span class="eyebrow">INCOMING ASSET</span>
+      <strong>DROP TO INSPECT</strong>
+      <span>GLB · GLTF · ANIMS</span>
+    </div>
+  </div>
+
+  <div id="toast-stack" class="toast-stack" role="status" aria-live="polite"></div>
+
+  <dialog id="help-dialog" class="help-dialog">
+    <div class="help-shell">
+      <header class="help-head">
+        <div>
+          <div class="eyebrow">GLB INSPECTOR / FIELD MANUAL</div>
+          <h2>Controls &amp; shortcuts</h2>
+        </div>
+        <button id="btn-help-close" class="panel-close help-close" type="button" aria-label="Close help">×</button>
+      </header>
+      <div class="help-body">
+        <section>
+          <div class="help-label">KEYBOARD</div>
+          <div class="shortcut-grid">
+            <div><span>Frame model</span><kbd>F</kbd></div>
+            <div><span>Grid</span><kbd>G</kbd></div>
+            <div><span>Wireframe</span><kbd>W</kbd></div>
+            <div><span>Auto-rotate</span><kbd>R</kbd></div>
+            <div><span>Bounding box</span><kbd>B</kbd></div>
+            <div><span>Axes</span><kbd>A</kbd></div>
+            <div><span>Save screenshot</span><kbd>S</kbd></div>
+            <div><span>Play / pause clips</span><kbd>Space</kbd></div>
+            <div><span>This manual</span><kbd>H</kbd></div>
+            <div><span>Close / clear selection</span><kbd>Esc</kbd></div>
+          </div>
+        </section>
+        <section>
+          <div class="help-label">POINTER</div>
+          <div class="pointer-list">
+            <div><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="7" stroke="currentColor"/><path d="M12 3v6" stroke="currentColor"/></svg><span><strong>Left drag</strong> orbit</span></div>
+            <div><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="7" stroke="currentColor"/><path d="M12 3v6" stroke="currentColor"/><circle cx="12" cy="6" r="1.5" fill="currentColor"/></svg><span><strong>Right drag</strong> pan</span></div>
+            <div><svg viewBox="0 0 24 24" fill="none"><rect x="8" y="2.5" width="8" height="19" rx="4" stroke="currentColor"/><path d="M12 6v4" stroke="currentColor"/></svg><span><strong>Scroll</strong> zoom</span></div>
+            <div><svg viewBox="0 0 24 24" fill="none"><path d="m9 4 7 4 4 7-4 5-7-1-4-7z" stroke="currentColor"/><path d="m9 4-1 6 3 5m0 0 5 1m-5-1 2-5" stroke="currentColor"/></svg><span><strong>Click</strong> select node</span></div>
+          </div>
+        </section>
+        <section class="help-note">
+          <span class="micro">LOCAL-FIRST</span>
+          <p>Files never leave this machine. Rendering uses three.js r186 with a studio HDR environment, ACES tone mapping and a soft shadow catcher. Export a PNG framing exactly what you see in the viewport.</p>
+        </section>
+      </div>
+      <footer class="help-foot">
+        <span>PRESS <kbd>ESC</kbd> TO CLOSE</span>
+        <span class="micro">GLB INSPECTOR · v1.0</span>
+      </footer>
+    </div>
+  </dialog>
+
+  <input id="file-input" type="file" hidden multiple accept=".glb,.gltf,.bin,.json,.png,.jpg,.jpeg,.webp,.avif,.gif,.ktx2">
+  <input id="folder-input" type="file" hidden multiple webkitdirectory directory>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

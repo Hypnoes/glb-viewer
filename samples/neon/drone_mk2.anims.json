@@ -1,0 +1,321 @@
+{
+  "schema": 1,
+  "asset": "prp.drone.mk2",
+  "clips": [
+    {
+      "name": "spawn",
+      "duration": 1.05,
+      "looping": false,
+      "tracks": [
+        {
+          "node": "$self",
+          "property": "translation",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, -2.4, 0] }, { "t": 0.22, "value": [0, -1.15, 0] }, { "t": 0.5, "value": [0, 0.08, 0] }, { "t": 0.75, "value": [0, 0, 0] }, { "t": 1.05, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "$self",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.25, "value": [0, 0, -10] }, { "t": 0.55, "value": [0, 0, 4] }, { "t": 0.8, "value": [0, 0, 0] }, { "t": 1.05, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "$self",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0.02, 0.02, 0.02] }, { "t": 0.35, "value": [1.12, 1.12, 1.12] }, { "t": 0.55, "value": [0.97, 0.97, 0.97] }, { "t": 0.8, "value": [1, 1, 1] }, { "t": 1.05, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Core",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0.05, 0.05, 0.05] }, { "t": 0.28, "value": [1.45, 1.45, 1.45] }, { "t": 0.45, "value": [0.9, 0.9, 0.9] }, { "t": 0.62, "value": [1.05, 1.05, 1.05] }, { "t": 0.85, "value": [1, 1, 1] }, { "t": 1.05, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Core",
+          "property": "emissive_scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.1, "value": [0.6, 0.6, 0.6] }, { "t": 0.18, "value": [0.1, 0.1, 0.1] }, { "t": 0.32, "value": [1.6, 1.6, 1.6] }, { "t": 0.45, "value": [0.7, 0.7, 0.7] }, { "t": 0.6, "value": [1.2, 1.2, 1.2] }, { "t": 0.85, "value": [1, 1, 1] }, { "t": 1.05, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Ring",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0.05, 0.05, 0.05] }, { "t": 0.3, "value": [1.35, 1.35, 1.35] }, { "t": 0.5, "value": [0.95, 0.95, 0.95] }, { "t": 0.68, "value": [1.06, 1.06, 1.06] }, { "t": 0.9, "value": [1, 1, 1] }, { "t": 1.05, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Ring",
+          "property": "rotation_euler_deg",
+          "interpolation": "linear",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.35, "value": [0, 0, 180] }, { "t": 0.7, "value": [0, 0, 420] }, { "t": 1.05, "value": [0, 0, 720] }]
+        },
+        {
+          "node": "Ring",
+          "property": "emissive_scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.1, "value": [0.5, 0.5, 0.5] }, { "t": 0.18, "value": [0.05, 0.05, 0.05] }, { "t": 0.32, "value": [1.5, 1.5, 1.5] }, { "t": 0.45, "value": [0.65, 0.65, 0.65] }, { "t": 0.6, "value": [1.15, 1.15, 1.15] }, { "t": 0.85, "value": [1, 1, 1] }, { "t": 1.05, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Fin_0",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0.01, 0.01, 0.01] }, { "t": 0.35, "value": [1.15, 1.15, 1.15] }, { "t": 0.55, "value": [0.95, 0.95, 0.95] }, { "t": 0.8, "value": [1, 1, 1] }, { "t": 1.05, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Fin_0",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.4, "value": [0, 0, -60] }, { "t": 0.7, "value": [0, 0, 15] }, { "t": 0.95, "value": [0, 0, 0] }, { "t": 1.05, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "Fin_90",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0.01, 0.01, 0.01] }, { "t": 0.35, "value": [1.15, 1.15, 1.15] }, { "t": 0.55, "value": [0.95, 0.95, 0.95] }, { "t": 0.8, "value": [1, 1, 1] }, { "t": 1.05, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Fin_90",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.4, "value": [0, 0, -60] }, { "t": 0.7, "value": [0, 0, 15] }, { "t": 0.95, "value": [0, 0, 0] }, { "t": 1.05, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "Fin_45",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0.01, 0.01, 0.01] }, { "t": 0.35, "value": [1.15, 1.15, 1.15] }, { "t": 0.55, "value": [0.95, 0.95, 0.95] }, { "t": 0.8, "value": [1, 1, 1] }, { "t": 1.05, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Fin_45",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.4, "value": [0, 0, -60] }, { "t": 0.7, "value": [0, 0, 15] }, { "t": 0.95, "value": [0, 0, 0] }, { "t": 1.05, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "Fin_-45",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0.01, 0.01, 0.01] }, { "t": 0.35, "value": [1.15, 1.15, 1.15] }, { "t": 0.55, "value": [0.95, 0.95, 0.95] }, { "t": 0.8, "value": [1, 1, 1] }, { "t": 1.05, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Fin_-45",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.4, "value": [0, 0, -60] }, { "t": 0.7, "value": [0, 0, 15] }, { "t": 0.95, "value": [0, 0, 0] }, { "t": 1.05, "value": [0, 0, 0] }]
+        }
+      ]
+    },
+    {
+      "name": "idle",
+      "duration": 4,
+      "looping": true,
+      "tracks": [
+        {
+          "node": "$self",
+          "property": "translation",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 1, "value": [0.07, 0.11, 0.03] }, { "t": 2, "value": [0, 0, 0] }, { "t": 3, "value": [-0.07, -0.11, -0.03] }, { "t": 4, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "$self",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 1, "value": [1, 6, 2.5] }, { "t": 2, "value": [0, 0, 0] }, { "t": 3, "value": [-1, -6, -2.5] }, { "t": 4, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "Ring",
+          "property": "rotation_euler_deg",
+          "interpolation": "linear",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 1, "value": [0, 0, 90] }, { "t": 2, "value": [0, 0, 180] }, { "t": 3, "value": [0, 0, 270] }, { "t": 4, "value": [0, 0, 360] }]
+        },
+        {
+          "node": "Ring",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 1, "value": [1.05, 1.05, 1.05] }, { "t": 2, "value": [1, 1, 1] }, { "t": 3, "value": [1.05, 1.05, 1.05] }, { "t": 4, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Ring",
+          "property": "emissive_scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.6, "value": [1.25, 1.25, 1.25] }, { "t": 1.2, "value": [0.9, 0.9, 0.9] }, { "t": 1.8, "value": [1.3, 1.3, 1.3] }, { "t": 2.4, "value": [0.95, 0.95, 0.95] }, { "t": 3, "value": [1.15, 1.15, 1.15] }, { "t": 3.6, "value": [1, 1, 1] }, { "t": 4, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Core",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.5, "value": [1.1, 1.1, 1.1] }, { "t": 1, "value": [1, 1, 1] }, { "t": 1.5, "value": [1.1, 1.1, 1.1] }, { "t": 2, "value": [1, 1, 1] }, { "t": 2.5, "value": [1.1, 1.1, 1.1] }, { "t": 3, "value": [1, 1, 1] }, { "t": 3.5, "value": [1.1, 1.1, 1.1] }, { "t": 4, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Core",
+          "property": "emissive_scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.5, "value": [1.2, 1.2, 1.2] }, { "t": 1, "value": [0.9, 0.9, 0.9] }, { "t": 1.5, "value": [1.3, 1.3, 1.3] }, { "t": 2, "value": [0.95, 0.95, 0.95] }, { "t": 2.5, "value": [1.2, 1.2, 1.2] }, { "t": 3, "value": [0.9, 0.9, 0.9] }, { "t": 3.5, "value": [1.15, 1.15, 1.15] }, { "t": 4, "value": [1, 1, 1] }]
+        },
+        {
+          "node": "Fin_0",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.7, "value": [0, 0, 2.5] }, { "t": 1.5, "value": [0, 0, -2] }, { "t": 2.3, "value": [0, 0, 2] }, { "t": 3.2, "value": [0, 0, -2.5] }, { "t": 4, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "Fin_90",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.7, "value": [0, 0, 2.5] }, { "t": 1.5, "value": [0, 0, -2] }, { "t": 2.3, "value": [0, 0, 2] }, { "t": 3.2, "value": [0, 0, -2.5] }, { "t": 4, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "Fin_45",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.7, "value": [0, 0, 2.5] }, { "t": 1.5, "value": [0, 0, -2] }, { "t": 2.3, "value": [0, 0, 2] }, { "t": 3.2, "value": [0, 0, -2.5] }, { "t": 4, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "Fin_-45",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.7, "value": [0, 0, 2.5] }, { "t": 1.5, "value": [0, 0, -2] }, { "t": 2.3, "value": [0, 0, 2] }, { "t": 3.2, "value": [0, 0, -2.5] }, { "t": 4, "value": [0, 0, 0] }]
+        }
+      ]
+    },
+    {
+      "name": "destroy",
+      "duration": 4.6,
+      "looping": false,
+      "tracks": [
+        {
+          "node": "$self",
+          "property": "rotation_euler_deg",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.18, "value": [6, 25, -4] }, { "t": 0.45, "value": [20, 80, -12] }, { "t": 0.8, "value": [48, 150, -24] }, { "t": 1.15, "value": [75, 210, -34] }, { "t": 1.35, "value": [86, 235, -38] }, { "t": 1.45, "value": [80, 230, -35] }, { "t": 1.6, "value": [85, 232, -37] }, { "t": 1.9, "value": [83, 232, -36] }, { "t": 4.6, "value": [83, 232, -36] }]
+        },
+        {
+          "node": "$self",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.14, "value": [1.07, 0.93, 1.07] }, { "t": 0.3, "value": [1, 1, 1] }, { "t": 1.35, "value": [0.97, 0.9, 0.97] }, { "t": 1.5, "value": [0.99, 0.92, 0.99] }, { "t": 2, "value": [0.96, 0.9, 0.96] }, { "t": 4.6, "value": [0.96, 0.9, 0.96] }]
+        },
+        {
+          "node": "$self",
+          "property": "translation",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.4, "value": [0.1, 0, 0.04] }, { "t": 0.9, "value": [0.28, 0, -0.05] }, { "t": 1.35, "value": [0.38, 0, -0.12] }, { "t": 4.6, "value": [0.38, 0, -0.12] }]
+        },
+        {
+          "node": "Core",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.06, "value": [1.6, 1.6, 1.6] }, { "t": 0.16, "value": [0.8, 0.8, 0.8] }, { "t": 0.35, "value": [1.12, 1.12, 1.12] }, { "t": 0.7, "value": [0.92, 0.92, 0.92] }, { "t": 1.35, "value": [1, 1, 1] }, { "t": 1.5, "value": [0.88, 0.88, 0.88] }, { "t": 2, "value": [0.9, 0.9, 0.9] }, { "t": 4.6, "value": [0.9, 0.9, 0.9] }]
+        },
+        {
+          "node": "Core",
+          "property": "translation",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.1, "value": [0, 0.1, 0] }, { "t": 0.3, "value": [0, 0.16, 0] }, { "t": 0.6, "value": [0.02, 0.12, 0] }, { "t": 0.95, "value": [0.04, 0.05, 0] }, { "t": 1.35, "value": [0.05, 0.02, 0] }, { "t": 4.6, "value": [0.05, 0.02, 0] }]
+        },
+        {
+          "node": "Core",
+          "property": "emissive_scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.05, "value": [4, 3, 2] }, { "t": 0.12, "value": [0.6, 0.4, 0.3] }, { "t": 0.2, "value": [2.2, 1.8, 1.2] }, { "t": 0.3, "value": [0.8, 0.6, 0.5] }, { "t": 0.45, "value": [1.6, 1.2, 0.8] }, { "t": 0.7, "value": [0.9, 0.7, 0.6] }, { "t": 1.2, "value": [1, 1, 1] }, { "t": 1.25, "value": [3, 2.2, 0.6] }, { "t": 1.33, "value": [0.2, 0.15, 0.1] }, { "t": 1.42, "value": [2.6, 1.9, 0.5] }, { "t": 1.52, "value": [0.1, 0.1, 0.1] }, { "t": 1.62, "value": [1.8, 1.3, 0.35] }, { "t": 1.75, "value": [0.5, 0.35, 0.15] }, { "t": 1.9, "value": [1.2, 0.8, 0.25] }, { "t": 2.1, "value": [0.25, 0.18, 0.08] }, { "t": 2.35, "value": [0.7, 0.45, 0.15] }, { "t": 2.6, "value": [0.12, 0.08, 0.05] }, { "t": 2.9, "value": [0.4, 0.25, 0.08] }, { "t": 3.2, "value": [0.05, 0.04, 0.03] }, { "t": 3.5, "value": [0.18, 0.1, 0.04] }, { "t": 3.8, "value": [0.02, 0.02, 0.02] }, { "t": 4.6, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "Ring",
+          "property": "rotation_euler_deg",
+          "interpolation": "linear",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.3, "value": [0, 0, 240] }, { "t": 0.7, "value": [0, 0, 480] }, { "t": 1.1, "value": [0, 0, 650] }, { "t": 1.35, "value": [18, 0, 700] }, { "t": 1.5, "value": [12, 0, 690] }, { "t": 2, "value": [15, 0, 695] }, { "t": 4.6, "value": [15, 0, 695] }]
+        },
+        {
+          "node": "Ring",
+          "property": "translation",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.15, "value": [0, 0.15, 0] }, { "t": 0.4, "value": [0.05, 0.4, 0] }, { "t": 0.8, "value": [0.12, 0.5, 0] }, { "t": 1.15, "value": [0.18, 0.25, 0] }, { "t": 1.35, "value": [0.2, 0.06, 0] }, { "t": 1.5, "value": [0.2, 0, 0] }, { "t": 4.6, "value": [0.2, 0, 0] }]
+        },
+        {
+          "node": "Ring",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.15, "value": [1.3, 1.3, 1.3] }, { "t": 0.5, "value": [1.1, 1.1, 1.1] }, { "t": 0.85, "value": [1.2, 1.2, 1.2] }, { "t": 1.15, "value": [1, 1, 1] }, { "t": 1.35, "value": [0.92, 0.92, 0.92] }, { "t": 4.6, "value": [0.92, 0.92, 0.92] }]
+        },
+        {
+          "node": "Ring",
+          "property": "emissive_scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.04, "value": [3, 3, 3] }, { "t": 0.12, "value": [0.4, 0.4, 0.4] }, { "t": 0.22, "value": [2, 2, 2] }, { "t": 0.34, "value": [0.6, 0.6, 0.6] }, { "t": 0.5, "value": [1.4, 1.4, 1.4] }, { "t": 0.8, "value": [0.8, 0.8, 0.8] }, { "t": 1.2, "value": [1, 1, 1] }, { "t": 1.3, "value": [2.4, 2.4, 2.4] }, { "t": 1.38, "value": [0.15, 0.15, 0.15] }, { "t": 1.48, "value": [2.2, 2.2, 2.2] }, { "t": 1.6, "value": [0.2, 0.2, 0.2] }, { "t": 1.72, "value": [1.6, 1.6, 1.6] }, { "t": 1.86, "value": [0.3, 0.3, 0.3] }, { "t": 2.05, "value": [1.1, 1.1, 1.1] }, { "t": 2.25, "value": [0.18, 0.18, 0.18] }, { "t": 2.5, "value": [0.6, 0.6, 0.6] }, { "t": 2.8, "value": [0.08, 0.08, 0.08] }, { "t": 3.1, "value": [0.3, 0.3, 0.3] }, { "t": 3.4, "value": [0.04, 0.04, 0.04] }, { "t": 3.7, "value": [0.12, 0.12, 0.12] }, { "t": 4, "value": [0.01, 0.01, 0.01] }, { "t": 4.6, "value": [0, 0, 0] }]
+        },
+        {
+          "node": "Fin_0",
+          "property": "translation",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.08, "value": [0.04, 0, 0] }, { "t": 0.3, "value": [0.55, 0, 0] }, { "t": 0.65, "value": [0.85, 0, 0] }, { "t": 0.95, "value": [0.72, 0, 0] }, { "t": 1.3, "value": [0.78, 0, 0] }, { "t": 4.6, "value": [0.78, 0, 0] }]
+        },
+        {
+          "node": "Fin_0",
+          "property": "rotation_euler_deg",
+          "interpolation": "linear",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.25, "value": [0, 0, 120] }, { "t": 0.6, "value": [0, 0, 400] }, { "t": 1, "value": [0, 0, 640] }, { "t": 1.3, "value": [0, 0, 700] }, { "t": 4.6, "value": [0, 0, 700] }]
+        },
+        {
+          "node": "Fin_0",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.3, "value": [1.05, 1.05, 1.05] }, { "t": 1.3, "value": [0.9, 0.9, 0.9] }, { "t": 4.6, "value": [0.9, 0.9, 0.9] }]
+        },
+        {
+          "node": "Fin_90",
+          "property": "translation",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.08, "value": [0, 0.04, 0] }, { "t": 0.3, "value": [0, 0.55, 0] }, { "t": 0.65, "value": [0, 0.85, 0] }, { "t": 0.95, "value": [0, 0.72, 0] }, { "t": 1.3, "value": [0, 0.78, 0] }, { "t": 4.6, "value": [0, 0.78, 0] }]
+        },
+        {
+          "node": "Fin_90",
+          "property": "rotation_euler_deg",
+          "interpolation": "linear",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.25, "value": [0, 0, 120] }, { "t": 0.6, "value": [0, 0, 400] }, { "t": 1, "value": [0, 0, 640] }, { "t": 1.3, "value": [0, 0, 700] }, { "t": 4.6, "value": [0, 0, 700] }]
+        },
+        {
+          "node": "Fin_90",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.3, "value": [1.05, 1.05, 1.05] }, { "t": 1.3, "value": [0.9, 0.9, 0.9] }, { "t": 4.6, "value": [0.9, 0.9, 0.9] }]
+        },
+        {
+          "node": "Fin_45",
+          "property": "translation",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.08, "value": [0.0283, 0.0283, 0] }, { "t": 0.3, "value": [0.3889, 0.3889, 0] }, { "t": 0.65, "value": [0.601, 0.601, 0] }, { "t": 0.95, "value": [0.5091, 0.5091, 0] }, { "t": 1.3, "value": [0.5515, 0.5515, 0] }, { "t": 4.6, "value": [0.5515, 0.5515, 0] }]
+        },
+        {
+          "node": "Fin_45",
+          "property": "rotation_euler_deg",
+          "interpolation": "linear",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.25, "value": [0, 0, 120] }, { "t": 0.6, "value": [0, 0, 400] }, { "t": 1, "value": [0, 0, 640] }, { "t": 1.3, "value": [0, 0, 700] }, { "t": 4.6, "value": [0, 0, 700] }]
+        },
+        {
+          "node": "Fin_45",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.3, "value": [1.05, 1.05, 1.05] }, { "t": 1.3, "value": [0.9, 0.9, 0.9] }, { "t": 4.6, "value": [0.9, 0.9, 0.9] }]
+        },
+        {
+          "node": "Fin_-45",
+          "property": "translation",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.08, "value": [0.0283, -0.0283, 0] }, { "t": 0.3, "value": [0.3889, -0.3889, 0] }, { "t": 0.65, "value": [0.601, -0.601, 0] }, { "t": 0.95, "value": [0.5091, -0.5091, 0] }, { "t": 1.3, "value": [0.5515, -0.5515, 0] }, { "t": 4.6, "value": [0.5515, -0.5515, 0] }]
+        },
+        {
+          "node": "Fin_-45",
+          "property": "rotation_euler_deg",
+          "interpolation": "linear",
+          "keys": [{ "t": 0, "value": [0, 0, 0] }, { "t": 0.25, "value": [0, 0, 120] }, { "t": 0.6, "value": [0, 0, 400] }, { "t": 1, "value": [0, 0, 640] }, { "t": 1.3, "value": [0, 0, 700] }, { "t": 4.6, "value": [0, 0, 700] }]
+        },
+        {
+          "node": "Fin_-45",
+          "property": "scale",
+          "interpolation": "smooth",
+          "keys": [{ "t": 0, "value": [1, 1, 1] }, { "t": 0.3, "value": [1.05, 1.05, 1.05] }, { "t": 1.3, "value": [0.9, 0.9, 0.9] }, { "t": 4.6, "value": [0.9, 0.9, 0.9] }]
+        }
+      ]
+    }
+  ]
+}

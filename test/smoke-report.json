@@ -1,0 +1,957 @@
+{
+  "baseUrl": "http://127.0.0.1:8126",
+  "startedAt": "2026-10-18T05:15:10.782Z",
+  "screenshots": [
+    "screenshots/empty-state.png",
+    "screenshots/damaged-helmet.png",
+    "screenshots/fox.png",
+    "screenshots/box-textured.png",
+    "screenshots/range-arena.png",
+    "screenshots/weapon-nr01.png",
+    "screenshots/drone-mk2.png",
+    "screenshots/cover-crate.png",
+    "screenshots/responsive-1280-fox.png",
+    "screenshots/responsive-900-fox.png",
+    "screenshots/query-param-helmet.png",
+    "screenshots/drone-anims-selected.png",
+    "screenshots/drone-anims-end.png",
+    "screenshots/fox-gltf-neon-mixed.png",
+    "screenshots/query-param-drone-anims.png"
+  ],
+  "samples": [
+    {
+      "id": "damaged-helmet",
+      "name": "Damaged Helmet",
+      "url": "samples/DamagedHelmet.glb",
+      "state": {
+        "ready": true,
+        "loading": false,
+        "mode": "viewer",
+        "modelName": "DamagedHelmet.glb",
+        "meshCount": 1,
+        "triangleCount": 15452,
+        "vertexCount": 14556,
+        "nodeCount": 1,
+        "materialCount": 1,
+        "textureCount": 5,
+        "animationClips": [],
+        "animations": 0,
+        "neonAnimationClips": [],
+        "neonAnimations": 0,
+        "animationSource": null,
+        "animationSourceLabel": "—",
+        "activeClipIndex": -1,
+        "activeClip": null,
+        "activeClipSource": null,
+        "animationPlaying": false,
+        "animationDuration": 0,
+        "animationLooping": false,
+        "animationTime": 0,
+        "dimensions": {
+          "x": 1.8899539709091187,
+          "y": 1.8019693833753556,
+          "z": 2.000000630037496
+        },
+        "neonRange": null,
+        "camera": {
+          "position": [
+            3.1187404400138843,
+            1.9031947037783996,
+            3.6192133429666096
+          ],
+          "target": [
+            -0.0024815797805786133,
+            0.000010545367141234774,
+            -0.18715497385590674
+          ],
+          "fov": 42
+        },
+        "selected": null,
+        "scene": null,
+        "ui": null,
+        "errors": []
+      },
+      "rendered": {
+        "loadingHidden": true,
+        "errorHidden": true,
+        "emptyHidden": true,
+        "hierarchyRows": 2,
+        "materialRows": 1,
+        "animationVisible": false,
+        "selectedText": "—",
+        "canvasWidth": 1014
+      },
+      "screenshot": "screenshots/damaged-helmet.png",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "fox",
+      "name": "Fox",
+      "url": "samples/Fox.gltf",
+      "state": {
+        "ready": true,
+        "loading": false,
+        "mode": "viewer",
+        "modelName": "Fox.gltf",
+        "meshCount": 1,
+        "triangleCount": 576,
+        "vertexCount": 1728,
+        "nodeCount": 26,
+        "materialCount": 1,
+        "textureCount": 1,
+        "animationClips": [
+          "Survey",
+          "Walk",
+          "Run"
+        ],
+        "animations": 3,
+        "neonAnimationClips": [],
+        "neonAnimations": 0,
+        "animationSource": "gltf",
+        "animationSourceLabel": "GLTF CLIPS",
+        "activeClipIndex": 0,
+        "activeClip": "Survey",
+        "activeClipSource": "gltf",
+        "animationPlaying": true,
+        "animationDuration": 3.4166667461395264,
+        "animationLooping": true,
+        "animationTime": 0,
+        "dimensions": {
+          "x": 25.185436248792875,
+          "y": 79.02894183208898,
+          "z": 154.71986556468758
+        },
+        "neonRange": null,
+        "camera": {
+          "position": [
+            166.58415952632754,
+            140.96843414886018,
+            192.4163418296595
+          ],
+          "target": [
+            -6.378096006898204e-7,
+            39.39272673170335,
+            -10.7350730046541
+          ],
+          "fov": 42
+        },
+        "selected": null,
+        "scene": null,
+        "ui": null,
+        "errors": []
+      },
+      "rendered": {
+        "loadingHidden": true,
+        "errorHidden": true,
+        "emptyHidden": true,
+        "hierarchyRows": 27,
+        "materialRows": 1,
+        "animationVisible": true,
+        "selectedText": "—",
+        "canvasWidth": 1014
+      },
+      "screenshot": "screenshots/fox.png",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "box-textured",
+      "name": "Box Textured",
+      "url": "samples/BoxTextured.gltf",
+      "state": {
+        "ready": true,
+        "loading": false,
+        "mode": "viewer",
+        "modelName": "BoxTextured.gltf",
+        "meshCount": 1,
+        "triangleCount": 12,
+        "vertexCount": 24,
+        "nodeCount": 2,
+        "materialCount": 1,
+        "textureCount": 1,
+        "animationClips": [],
+        "animations": 0,
+        "neonAnimationClips": [],
+        "neonAnimations": 0,
+        "animationSource": null,
+        "animationSourceLabel": "—",
+        "activeClipIndex": -1,
+        "activeClip": null,
+        "activeClipSource": null,
+        "animationPlaying": false,
+        "animationDuration": 0,
+        "animationLooping": false,
+        "animationTime": 0,
+        "dimensions": {
+          "x": 1,
+          "y": 1.0000000000000002,
+          "z": 1.0000000000000002
+        },
+        "neonRange": null,
+        "camera": {
+          "position": [
+            1.643581649391128,
+            1.002183932555566,
+            2.004367865111132
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "fov": 42
+        },
+        "selected": null,
+        "scene": null,
+        "ui": null,
+        "errors": []
+      },
+      "rendered": {
+        "loadingHidden": true,
+        "errorHidden": true,
+        "emptyHidden": true,
+        "hierarchyRows": 3,
+        "materialRows": 1,
+        "animationVisible": false,
+        "selectedText": "—",
+        "canvasWidth": 1014
+      },
+      "screenshot": "screenshots/box-textured.png",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "range-arena",
+      "name": "Range Arena",
+      "url": "samples/neon/range_arena.glb",
+      "state": {
+        "ready": true,
+        "loading": false,
+        "mode": "viewer",
+        "modelName": "range_arena.glb",
+        "meshCount": 146,
+        "triangleCount": 34472,
+        "vertexCount": 20746,
+        "nodeCount": 161,
+        "materialCount": 12,
+        "textureCount": 0,
+        "animationClips": [],
+        "animations": 0,
+        "neonAnimationClips": [],
+        "neonAnimations": 0,
+        "animationSource": null,
+        "animationSourceLabel": "—",
+        "activeClipIndex": -1,
+        "activeClip": null,
+        "activeClipSource": null,
+        "animationPlaying": false,
+        "animationDuration": 0,
+        "animationLooping": false,
+        "animationTime": 0,
+        "dimensions": {
+          "x": 36.4,
+          "y": 8.9,
+          "z": 36.4
+        },
+        "neonRange": {
+          "assetId": "ENV_RANGE",
+          "source": "src/world.rs:15-487",
+          "viewHintUsed": true
+        },
+        "camera": {
+          "position": [
+            0,
+            1.6799999999999975,
+            12
+          ],
+          "target": [
+            0,
+            2.6,
+            -9
+          ],
+          "fov": 78
+        },
+        "selected": null,
+        "scene": null,
+        "ui": null,
+        "errors": []
+      },
+      "rendered": {
+        "loadingHidden": true,
+        "errorHidden": true,
+        "emptyHidden": true,
+        "hierarchyRows": 162,
+        "materialRows": 12,
+        "animationVisible": false,
+        "selectedText": "—",
+        "canvasWidth": 1014
+      },
+      "screenshot": "screenshots/range-arena.png",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "weapon-nr01",
+      "name": "Weapon NR01",
+      "url": "samples/neon/weapon_nr01.glb",
+      "state": {
+        "ready": true,
+        "loading": false,
+        "mode": "viewer",
+        "modelName": "weapon_nr01.glb",
+        "meshCount": 21,
+        "triangleCount": 252,
+        "vertexCount": 504,
+        "nodeCount": 29,
+        "materialCount": 5,
+        "textureCount": 0,
+        "animationClips": [],
+        "animations": 0,
+        "neonAnimationClips": [],
+        "neonAnimations": 0,
+        "animationSource": null,
+        "animationSourceLabel": "—",
+        "activeClipIndex": -1,
+        "activeClip": null,
+        "activeClipSource": null,
+        "animationPlaying": false,
+        "animationDuration": 0,
+        "animationLooping": false,
+        "animationTime": 0,
+        "dimensions": {
+          "x": 0.21039022424134407,
+          "y": 0.44408095855117785,
+          "z": 0.966
+        },
+        "neonRange": {
+          "assetId": "WPN_NR01",
+          "source": "src/gameplay.rs:396-551",
+          "viewHintUsed": false
+        },
+        "camera": {
+          "position": [
+            1.0047492945798144,
+            0.5790597687125125,
+            1.1612004959762032
+          ],
+          "target": [
+            -0.02369511212067204,
+            -0.04804047927558894,
+            -0.09299999999999997
+          ],
+          "fov": 42
+        },
+        "selected": null,
+        "scene": null,
+        "ui": null,
+        "errors": []
+      },
+      "rendered": {
+        "loadingHidden": true,
+        "errorHidden": true,
+        "emptyHidden": true,
+        "hierarchyRows": 30,
+        "materialRows": 5,
+        "animationVisible": false,
+        "selectedText": "—",
+        "canvasWidth": 1014
+      },
+      "screenshot": "screenshots/weapon-nr01.png",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "drone-mk2",
+      "name": "Drone Mk2",
+      "url": "samples/neon/drone_mk2.glb",
+      "state": {
+        "ready": true,
+        "loading": false,
+        "mode": "viewer",
+        "modelName": "drone_mk2.glb",
+        "meshCount": 6,
+        "triangleCount": 3888,
+        "vertexCount": 2154,
+        "nodeCount": 7,
+        "materialCount": 3,
+        "textureCount": 0,
+        "animationClips": [],
+        "animations": 0,
+        "neonAnimationClips": [],
+        "neonAnimations": 0,
+        "animationSource": null,
+        "animationSourceLabel": "—",
+        "activeClipIndex": -1,
+        "activeClip": null,
+        "activeClipSource": null,
+        "animationPlaying": false,
+        "animationDuration": 0,
+        "animationLooping": false,
+        "animationTime": 0,
+        "dimensions": {
+          "x": 1.12,
+          "y": 1.1200000000000003,
+          "z": 0.48
+        },
+        "neonRange": {
+          "assetId": "PRP_DRONE_MK2",
+          "source": "src/world.rs:447-523",
+          "viewHintUsed": false
+        },
+        "camera": {
+          "position": [
+            1.5705165880689536,
+            0.9576320658957036,
+            1.915264131791407
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "fov": 42
+        },
+        "selected": null,
+        "scene": null,
+        "ui": null,
+        "errors": []
+      },
+      "rendered": {
+        "loadingHidden": true,
+        "errorHidden": true,
+        "emptyHidden": true,
+        "hierarchyRows": 8,
+        "materialRows": 3,
+        "animationVisible": false,
+        "selectedText": "—",
+        "canvasWidth": 1014
+      },
+      "screenshot": "screenshots/drone-mk2.png",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "cover-crate",
+      "name": "Cover Crate",
+      "url": "samples/neon/cover_crate.glb",
+      "state": {
+        "ready": true,
+        "loading": false,
+        "mode": "viewer",
+        "modelName": "cover_crate.glb",
+        "meshCount": 4,
+        "triangleCount": 48,
+        "vertexCount": 96,
+        "nodeCount": 5,
+        "materialCount": 2,
+        "textureCount": 0,
+        "animationClips": [],
+        "animations": 0,
+        "neonAnimationClips": [],
+        "neonAnimations": 0,
+        "animationSource": null,
+        "animationSourceLabel": "—",
+        "activeClipIndex": -1,
+        "activeClip": null,
+        "activeClipSource": null,
+        "animationPlaying": false,
+        "animationDuration": 0,
+        "animationLooping": false,
+        "animationTime": 0,
+        "dimensions": {
+          "x": 2.4,
+          "y": 1.3250000000000002,
+          "z": 2.4219999999999997
+        },
+        "neonRange": {
+          "assetId": "PRP_COVER_CRATE",
+          "source": "src/world.rs:344-400",
+          "viewHintUsed": false
+        },
+        "camera": {
+          "position": [
+            3.4712544305409665,
+            2.1291185552079073,
+            4.244237110415813
+          ],
+          "target": [
+            0,
+            0.012500000000000013,
+            0.01100000000000001
+          ],
+          "fov": 42
+        },
+        "selected": null,
+        "scene": null,
+        "ui": null,
+        "errors": []
+      },
+      "rendered": {
+        "loadingHidden": true,
+        "errorHidden": true,
+        "emptyHidden": true,
+        "hierarchyRows": 6,
+        "materialRows": 2,
+        "animationVisible": false,
+        "selectedText": "—",
+        "canvasWidth": 1014
+      },
+      "screenshot": "screenshots/cover-crate.png",
+      "pass": true,
+      "failures": []
+    }
+  ],
+  "emptyState": {
+    "emptyVisible": true,
+    "sampleCards": 4,
+    "groups": [
+      "NEON RANGE4",
+      "KHRONOS3"
+    ],
+    "heading": "See every polygon.\nKnow every material.",
+    "canvas": {
+      "width": 1014,
+      "height": 904
+    },
+    "viewport": {
+      "width": 1600,
+      "height": 1000
+    }
+  },
+  "queryParam": {
+    "state": {
+      "ready": true,
+      "loading": false,
+      "mode": "viewer",
+      "modelName": "DamagedHelmet.glb",
+      "meshCount": 1,
+      "triangleCount": 15452,
+      "vertexCount": 14556,
+      "nodeCount": 1,
+      "materialCount": 1,
+      "textureCount": 5,
+      "animationClips": [],
+      "animations": 0,
+      "neonAnimationClips": [],
+      "neonAnimations": 0,
+      "animationSource": null,
+      "animationSourceLabel": "—",
+      "activeClipIndex": -1,
+      "activeClip": null,
+      "activeClipSource": null,
+      "animationPlaying": false,
+      "animationDuration": 0,
+      "animationLooping": false,
+      "animationTime": 0,
+      "dimensions": {
+        "x": 1.8899539709091187,
+        "y": 1.8019693833753556,
+        "z": 2.000000630037496
+      },
+      "neonRange": null,
+      "camera": {
+        "position": [
+          3.1187404400138843,
+          1.9031947037783996,
+          3.6192133429666096
+        ],
+        "target": [
+          -0.0024815797805786133,
+          0.000010545367141234774,
+          -0.18715497385590674
+        ],
+        "fov": 42
+      },
+      "selected": null,
+      "scene": null,
+      "ui": null,
+      "errors": []
+    },
+    "ui": {
+      "emptyHidden": true,
+      "errorHidden": true
+    }
+  },
+  "responsive": {
+    "at1280": {
+      "width": 1280,
+      "height": 800,
+      "panelsDrawerMode": false,
+      "pageOverflow": false,
+      "errorHidden": true
+    },
+    "at900": {
+      "width": 900,
+      "panelsDrawerMode": true,
+      "leftButtonVisible": true,
+      "sampleOverflow": false,
+      "errorHidden": true
+    }
+  },
+  "sidecarAnimations": {
+    "clips": [
+      "spawn",
+      "idle",
+      "destroy"
+    ],
+    "missingExpectedClips": [],
+    "targetIndex": 2,
+    "targetName": "destroy",
+    "state": {
+      "ready": true,
+      "loading": false,
+      "mode": "viewer",
+      "modelName": "drone_mk2.glb",
+      "meshCount": 6,
+      "triangleCount": 3888,
+      "vertexCount": 2154,
+      "nodeCount": 7,
+      "materialCount": 3,
+      "textureCount": 0,
+      "animationClips": [
+        "spawn",
+        "idle",
+        "destroy"
+      ],
+      "animations": 3,
+      "neonAnimationClips": [
+        "spawn",
+        "idle",
+        "destroy"
+      ],
+      "neonAnimations": 3,
+      "animationSource": "neon",
+      "animationSourceLabel": "NEON ANIMS · drone_mk2.anims.json",
+      "activeClipIndex": 0,
+      "activeClip": "spawn",
+      "activeClipSource": "neon",
+      "animationPlaying": true,
+      "animationDuration": 1.05,
+      "animationLooping": false,
+      "animationTime": 0,
+      "dimensions": {
+        "x": 1.12,
+        "y": 1.1200000000000003,
+        "z": 0.48
+      },
+      "neonRange": {
+        "assetId": "PRP_DRONE_MK2",
+        "source": "src/world.rs:447-523",
+        "viewHintUsed": false
+      },
+      "camera": {
+        "position": [
+          1.5705165880689536,
+          0.9576320658957036,
+          1.915264131791407
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "fov": 42
+      },
+      "selected": null,
+      "scene": null,
+      "ui": null,
+      "errors": []
+    },
+    "ui": {
+      "animationVisible": true,
+      "source": "NEON ANIMS · drone_mk2.anims.json",
+      "fileNote": "Loaded drone_mk2.anims.json · 3 clips for the current model.",
+      "manualButton": true,
+      "manualAccept": ".json,application/json",
+      "selectValue": "0",
+      "selectText": "spawn  ·  00:01.1  ·  NEON"
+    },
+    "selected": {
+      "index": 2,
+      "name": "destroy",
+      "playing": false,
+      "duration": 4.6,
+      "selectValue": "2",
+      "selectText": "destroy  ·  00:04.6  ·  NEON",
+      "targets": 22,
+      "changed": true
+    },
+    "pass": true,
+    "failures": []
+  },
+  "localSidecar": {
+    "state": {
+      "modelName": "drone_mk2.glb",
+      "neonAnimationClips": [
+        "spawn",
+        "idle",
+        "destroy"
+      ],
+      "animationSource": "neon",
+      "errors": []
+    },
+    "pass": true,
+    "failures": []
+  },
+  "emissive": {
+    "pass": true,
+    "failures": [],
+    "probeIndex": 0,
+    "clearIndex": 1,
+    "coreStart": [
+      1,
+      0.21666666666666667,
+      0.01
+    ],
+    "coreEnd": [
+      0.25,
+      0.05416666666666667,
+      0.0025
+    ],
+    "ringEnd": [
+      0,
+      0,
+      0
+    ],
+    "coreRestored": [
+      1,
+      0.21666666666666667,
+      0.01
+    ],
+    "ringRestored": [
+      0.014117647058823528,
+      0.6470588235294118,
+      1
+    ]
+  },
+  "mixedAnimations": {
+    "pass": true,
+    "failures": [],
+    "clips": [
+      "Survey",
+      "Walk",
+      "Run",
+      "head_nod"
+    ],
+    "options": [
+      "Survey  ·  00:03.4  ·  GLTF",
+      "Walk  ·  00:00.7  ·  GLTF",
+      "Run  ·  00:01.2  ·  GLTF",
+      "head_nod  ·  00:01.0  ·  NEON"
+    ],
+    "source": "GLTF + NEON · inline.anims.json",
+    "gltfIndex": 1,
+    "neonIndex": 3,
+    "neonState": {
+      "ready": true,
+      "loading": false,
+      "mode": "viewer",
+      "modelName": "Fox.gltf",
+      "meshCount": 1,
+      "triangleCount": 576,
+      "vertexCount": 1728,
+      "nodeCount": 26,
+      "materialCount": 1,
+      "textureCount": 1,
+      "animationClips": [
+        "Survey",
+        "Walk",
+        "Run",
+        "head_nod"
+      ],
+      "animations": 4,
+      "neonAnimationClips": [
+        "head_nod"
+      ],
+      "neonAnimations": 1,
+      "animationSource": "mixed",
+      "animationSourceLabel": "GLTF + NEON · inline.anims.json",
+      "activeClipIndex": 3,
+      "activeClip": "head_nod",
+      "activeClipSource": "neon",
+      "animationPlaying": false,
+      "animationDuration": 1,
+      "animationLooping": true,
+      "animationTime": 1,
+      "dimensions": {
+        "x": 25.185436248792875,
+        "y": 79.02894183208898,
+        "z": 154.71986556468758
+      },
+      "neonRange": null,
+      "camera": {
+        "position": [
+          166.58415952632754,
+          140.96843414886018,
+          192.4163418296595
+        ],
+        "target": [
+          -6.378096006898204e-7,
+          39.39272673170335,
+          -10.7350730046541
+        ],
+        "fov": 42
+      },
+      "selected": null,
+      "scene": null,
+      "ui": null,
+      "errors": []
+    },
+    "backClip": "Walk"
+  },
+  "validation": {
+    "pass": true,
+    "failures": [],
+    "messages": {
+      "duplicate": "inline.anims.json · clips[1].name: duplicate clip \"same\" (clip names must be unique)",
+      "unknown": "inline.anims.json · clips[0].tracks[0].property: unknown property \"color\"; expected one of translation, rotation_euler_deg, scale, emissive_scale",
+      "missing": "inline.anims.json: node not found in the loaded model — missing → \"NoSuchNode\"",
+      "late": "inline.anims.json · clips[0].tracks[0].keys: last key at 2s exceeds the clip duration of 1s",
+      "duration": "inline.anims.json · clips[0].duration: must be a positive number of seconds (got 0)"
+    }
+  },
+  "neonDeepLink": {
+    "state": {
+      "modelName": "drone_mk2.glb",
+      "neonAnimationClips": [
+        "spawn",
+        "idle",
+        "destroy"
+      ],
+      "animationSource": "neon",
+      "activeClip": "spawn"
+    },
+    "ui": {
+      "emptyHidden": true,
+      "errorHidden": true,
+      "source": "NEON ANIMS · drone_mk2.anims.json",
+      "animationVisible": true
+    },
+    "pass": true,
+    "failures": []
+  },
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "pass": true,
+  "screenshotApi": {
+    "prefix": "data:image/png;base64,",
+    "length": 800846,
+    "pass": true
+  },
+  "localFile": {
+    "state": {
+      "ready": true,
+      "loading": false,
+      "mode": "viewer",
+      "modelName": "Fox.gltf",
+      "meshCount": 1,
+      "triangleCount": 576,
+      "vertexCount": 1728,
+      "nodeCount": 26,
+      "materialCount": 1,
+      "textureCount": 1,
+      "animationClips": [
+        "Survey",
+        "Walk",
+        "Run"
+      ],
+      "animations": 3,
+      "neonAnimationClips": [],
+      "neonAnimations": 0,
+      "animationSource": "gltf",
+      "animationSourceLabel": "GLTF CLIPS",
+      "activeClipIndex": 0,
+      "activeClip": "Survey",
+      "activeClipSource": "gltf",
+      "animationPlaying": true,
+      "animationDuration": 3.4166667461395264,
+      "animationLooping": true,
+      "animationTime": 0.06470000000298023,
+      "dimensions": {
+        "x": 25.185436248792875,
+        "y": 79.02894183208898,
+        "z": 154.71986556468758
+      },
+      "neonRange": null,
+      "camera": {
+        "position": [
+          166.58415952632754,
+          140.96843414886018,
+          192.4163418296595
+        ],
+        "target": [
+          -6.378096006898204e-7,
+          39.39272673170335,
+          -10.7350730046541
+        ],
+        "fov": 42
+      },
+      "selected": null,
+      "scene": null,
+      "ui": null,
+      "errors": []
+    },
+    "ui": {
+      "source": "LOCAL FILE",
+      "errorHidden": true,
+      "loadingHidden": true,
+      "hierarchyRows": 27
+    },
+    "pass": true,
+    "failures": []
+  },
+  "interactions": {
+    "selected": "root",
+    "selectionVisible": true,
+    "cleared": true,
+    "wireOn": true,
+    "wireOff": true,
+    "helpOpen": true,
+    "helpClosed": true,
+    "pass": true,
+    "failures": []
+  },
+  "clampedSidecar": {
+    "anim": {
+      "index": 2,
+      "playing": false,
+      "time": 4.6,
+      "duration": 4.6,
+      "speed": 1,
+      "count": 3,
+      "source": "neon",
+      "sourceLabel": "NEON ANIMS · drone_mk2.anims.json",
+      "activeSource": "neon",
+      "activeLooping": false,
+      "clips": [
+        {
+          "name": "spawn",
+          "duration": 1.05,
+          "source": "neon",
+          "looping": false,
+          "tracks": 14
+        },
+        {
+          "name": "idle",
+          "duration": 4,
+          "source": "neon",
+          "looping": true,
+          "tracks": 9
+        },
+        {
+          "name": "destroy",
+          "duration": 4.6,
+          "source": "neon",
+          "looping": false,
+          "tracks": 20
+        }
+      ]
+    },
+    "playing": false,
+    "time": 4.6,
+    "duration": 4.6
+  },
+  "failures": [],
+  "finishedAt": "2026-10-18T05:15:43.645Z"
+}
